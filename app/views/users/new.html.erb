@@ -1,0 +1,17 @@
+<%= render :partial => "shared/nav" %>
+
+<% form_for(@user) do |f| %>
+  <%= f.error_messages %>
+
+  <%= f.label :first_name %><br />
+  <%= f.text_field :first_name %>
+  <%= f.label :last_name %><br />
+  <%= f.text_field :last_name %>
+  <%= f.label :email %><br />
+  <%= f.text_field :email %>
+  <%= f.label :password %><br />
+  <%= f.password_field :password %>
+  <%= f.label :password_confirmation %><br />
+  <%= f.password_field :password_confirmation %>
+  <%= f.submit "Sign Up" %>
+<% end %>

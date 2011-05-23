@@ -1,0 +1,9 @@
+<div id="nav">
+	<% if current_user %>
+		<%= link_to "Logout", logout_user_path( session[:user_id] ), :class => "tab" %>
+		<%= link_to "Account", logout_user_path( session[:user_id] ), :class => "tab" %>
+	<% else %>
+		<%= link_to "Login", login_path, :class => "tab" %>
+		<%= link_to "Sign Up", new_user_path, :class => "tab" %>
+	<% end %>
+</div>

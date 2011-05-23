@@ -1,0 +1,10 @@
+<%= render :partial => "shared/nav" %>
+
+<% form_for(@page) do |f| %>
+  <%= f.error_messages %>
+
+  <%= f.label :url %><br />
+  <%= f.text_field :url %>
+  <%= f.hidden_field :user_id, :value => current_user.id %>
+  <%= f.submit "Add Page" %>
+<% end %>

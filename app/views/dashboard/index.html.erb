@@ -1,0 +1,28 @@
+<%= render :partial => "shared/nav" %>
+
+<div id="pages">
+	
+	<div id="top_controls">
+		<%= link_to "Add Page +", new_page_path, :class => "top_control" %>
+	</div>
+	
+	<div id="window">
+		<% for page in @unlocked_pages %>
+		<div class="page">
+			<%= link_to page.url, page.url, :class => "url" %>
+			<div class="status"><%= page.status_in_words %></div>
+			<div class="date"><%= page.created_at.strftime( "%m/%d/%Y" ) %></div>
+			<%= link_to "Finish Reading", finish_page_path( page ), :class => "finish" %>
+		</div>
+		<% end %>
+		<% for page in @locked_pages %>
+		<div class="page finished">
+			<%= link_to page.url, page.url, :class => "url" %>
+			<div class="status"><%= page.status_in_words %></div>
+			<div class="date"><%= page.created_at.strftime( "%m/%d/%Y" ) %></div>
+			<%= link_to "Read Again", again_page_path( page ), :class => "again" %>
+		</div>
+		<% end %>
+	</div>
+	
+</div>

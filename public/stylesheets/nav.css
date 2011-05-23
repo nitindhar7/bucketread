@@ -1,0 +1,16 @@
+#nav {
+	margin: auto;
+	width: 900px;
+	height: 75px;
+	clear: both;
+}
+
+#nav .tab {
+	position: relative;
+	padding: 0 10px;
+	min-width: 50px;
+	height: 75px;
+	line-height: 75px;
+	font-size: 16px;
+	float: right;
+}

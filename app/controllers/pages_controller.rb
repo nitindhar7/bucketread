@@ -2,12 +2,11 @@ class PagesController < ApplicationController
   
   before_filter :auth_login
   
-  def new
-    @page = Page.new
-  end
-  
   def create
-    @page = Page.new( params[:page] )
+    @page = Page.new
+    @page.url = params[:url]
+    @page.user_id = params[:user_id]
+    
     if @page.save
       redirect_to dashboard_path, :notice => "Added Page!"
     else
@@ -31,9 +30,9 @@ class PagesController < ApplicationController
     @page.status = 0
     
     if @page.save
-      redirect_to dashboard_path, :notice => "Finished Page!"
+      redirect_to dashboard_path, :notice => "Unlocked Page!"
     else
-      redirect_to dashboard_path, :notice => "Could Not Finish Page!"
+      redirect_to dashboard_path, :notice => "Could Not Unlock Page!"
     end
   end
   

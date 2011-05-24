@@ -3,13 +3,19 @@
 <div id="pages">
 	
 	<div id="top_controls">
-		<%= link_to "Add Page +", new_page_path, :class => "top_control" %>
+		<div class="top_control add_page">Add Page +</div>
 	</div>
+	
+	<% form_remote_tag :url => pages_path, :method => :post, :html => { :id => "add_page" } do %>
+		<%= text_field_tag :url, nil, :class => "field" %>
+		<%= hidden_field_tag :user_id, nil, :value => current_user.id %>
+		<%= submit_tag 'Add Page', :class => "button" %>
+	<% end %>
 	
 	<div id="window">
 		<% for page in @unlocked_pages %>
 		<div class="page">
-			<%= link_to page.url, page.url, :class => "url" %>
+			<%= link_to page.url, page.url, :class => "url", :target => "_blank" %>
 			<div class="status"><%= page.status_in_words %></div>
 			<div class="date"><%= page.created_at.strftime( "%m/%d/%Y" ) %></div>
 			<%= link_to "Finish Reading", finish_page_path( page ), :class => "finish" %>
@@ -23,6 +29,7 @@
 			<%= link_to "Read Again", again_page_path( page ), :class => "again" %>
 		</div>
 		<% end %>
+		<div id="placeholder"></div>
 	</div>
 	
 </div>

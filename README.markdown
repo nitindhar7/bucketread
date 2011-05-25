@@ -1,7 +1,5 @@
 BucketRead
-
-What is BucketRead?
-BucketRead is a bookmarking app that lets you save interesting pages so you can read them later.
+Save interesting pages so you can read them later.
 
 How do I get started?
 Simply sign up for a free account with your email and get going. Download the extension here or from the Chrome Webstore.

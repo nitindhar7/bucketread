@@ -1,6 +1,8 @@
 <%= render :partial => "shared/nav" %>
 
-<% form_tag authorize_path do %>
+<div id="main_logo"></div>
+
+<% form_tag authorize_path, :id => "login_form" do %>
 	<%= label_tag :email %>
 	<%= text_field_tag :email, params[:email], :class => "field" %>
 	<%= label_tag :password %>

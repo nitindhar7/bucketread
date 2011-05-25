@@ -1,0 +1,12 @@
+{
+	"name": "Save to BucketRead",
+	"version": "1.0",
+	"permissions": [
+		"tabs", "http://*/*", "https://*/*"
+	],
+	"browser_action": {
+		"default_title": "Save to BucketRead",
+		"default_icon": "images/icon.png",
+		"popup": "views/welcome.html"
+	}
+}

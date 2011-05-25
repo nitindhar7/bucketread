@@ -1,0 +1,78 @@
+* {
+	margin: 0;
+	padding: 0;
+	font-family: "Trebuchet MS" Helvetica Tahoma;
+	font-size: 12px;
+	display: block;
+	outline: none;
+}
+
+#main {
+	padding: 10px;
+	width: 400px;
+}
+
+#logo {
+	width: 400px;
+	height: 35px;
+	border-bottom: 5px solid #EEE;
+}
+
+#content {
+	margin-top: 10px;
+	width: 400px;
+	clear: both;
+	overflow: auto;
+}
+
+#login {
+	padding: 10px;
+	width: 380px;
+	background: #EEE;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+}
+
+#login .title {
+	width: 380px;
+	height: 30px;
+	line-height: 30px;
+	color: #555;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+#login form {
+	width: 380px;
+	clear: both;
+}
+
+#login form label {
+	position: relative;
+	width: 80px;
+	height: 30px;
+	line-height: 30px;
+	font-size: 12px;
+	color: #555;
+	float: left;
+}
+
+#login form .field {
+	position: relative;
+	margin-bottom: 10px;
+	padding: 0 5px;
+	width: 288px;
+	height: 28px;
+	line-height: 28px;
+	font-size: 12px;
+	color: #555;
+	border: 1px solid #999;
+	float: left;
+}
+
+#login form .button {
+	margin-left: 80px;
+	width: 175px;
+	height: 30px;
+	cursor: pointer;
+}

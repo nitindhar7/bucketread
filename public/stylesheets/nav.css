@@ -20,3 +20,11 @@
 #nav .tab:hover {
 	color: #333;
 }
+
+#nav_logo {
+	position: relative;
+	width: 368px;
+	height: 75px;
+	background: url(/images/bucketread_logo_nav.png) no-repeat;
+	float: left;
+}

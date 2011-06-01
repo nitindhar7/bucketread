@@ -60,6 +60,66 @@
 	-webkit-box-shadow: inset 0 0 30px #000;
 }
 
+#main_actions {
+	margin: auto;
+	padding: 10px;
+	width: 880px;
+	background: #EEE;
+	display: none;
+	clear: both;
+	overflow: auto;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-box-shadow: 0 0 5px #999;
+	-webkit-box-shadow: 0 0 5px #999;
+}
+
+#login_form,
+#new_user {
+	position: relative;
+	width: 440px;
+	float: left;
+}
+
+#login_form .title,
+#new_user .title {
+	margin-bottom: 10px;
+	width: 440px;
+	height: 20px;
+	line-height: 20px;
+	font-size: 16px;
+	color: #900;
+}
+
+#login_form label,
+#new_user label {
+	width: 440px;
+	height: 20px;
+	line-height: 20px;
+	font-size: 12px;
+	font-style: italic;
+	color: #666;
+}
+
+#login_form .field,
+#new_user .field {
+	margin-bottom: 10px;
+	padding: 5px;
+	width: 388px;
+	height: 18px;
+	line-height: 18px;
+	font-size: 12px;
+	color: #666;
+	border: 1px solid #999;
+}
+
+#login_form .button,
+#new_user .button {
+	width: 100px;
+	height: 30px;
+	font-size: 12px;
+}
+
 /*
  * INDEX
  */
@@ -164,7 +224,8 @@
 #window .page .status,
 #window .page .date,
 #window .page .finish,
-#window .page .again {
+#window .page .again,
+#window .page .remove {
 	position: relative;
 	height: 28px;
 	line-height: 28px;
@@ -182,7 +243,7 @@
 }
 
 #window .page .status {
-	width: 95px;
+	width: 70px;
 }
 
 #window .page .date {
@@ -191,7 +252,12 @@
 
 #window .page .finish,
 #window .page .again {
-	width: 150px;
+	width: 125px;
+	font-weight: bold;
+}
+
+#window .page .remove {
+	width: 50px;
 	font-weight: bold;
 }
 

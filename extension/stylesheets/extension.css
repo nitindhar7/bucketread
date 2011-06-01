@@ -1,3 +1,5 @@
+/* resets */
+
 * {
 	margin: 0;
 	padding: 0;
@@ -7,34 +9,39 @@
 	outline: none;
 }
 
+/* default */
+
 #main {
 	padding: 10px;
-	width: 400px;
+	width: 600px;
 }
 
 #logo {
-	width: 400px;
+	width: 600px;
 	height: 35px;
+	background: url(/images/bucketread_logo_extension.png) no-repeat;
 	border-bottom: 5px solid #EEE;
 }
 
 #content {
 	margin-top: 10px;
-	width: 400px;
+	width: 600px;
 	clear: both;
 	overflow: auto;
 }
 
+/* login */
+
 #login {
 	padding: 10px;
-	width: 380px;
+	width: 580px;
 	background: #EEE;
 	-moz-border-radius: 10px;
 	-webkit-border-radius: 10px;
 }
 
 #login .title {
-	width: 380px;
+	width: 580px;
 	height: 30px;
 	line-height: 30px;
 	color: #555;
@@ -42,12 +49,12 @@
 	font-weight: bold;
 }
 
-#login form {
-	width: 380px;
+#login .body {
+	width: 580px;
 	clear: both;
 }
 
-#login form label {
+#login .body label {
 	position: relative;
 	width: 80px;
 	height: 30px;
@@ -57,22 +64,77 @@
 	float: left;
 }
 
-#login form .field {
+#login .body .field {
 	position: relative;
 	margin-bottom: 10px;
 	padding: 0 5px;
-	width: 288px;
+	width: 488px;
 	height: 28px;
-	line-height: 28px;
+	line-height: 18px;
 	font-size: 12px;
 	color: #555;
 	border: 1px solid #999;
 	float: left;
 }
 
-#login form .button {
+#login .body .button {
 	margin-left: 80px;
 	width: 175px;
 	height: 30px;
 	cursor: pointer;
+}
+
+/* index */
+
+#pages {
+	width: 598px;
+	border: 1px solid #DBDBB0;
+}
+
+#pages .page {
+	width: 598px;
+	height 38px;
+	background: #FFFFCC;
+	border-top: 1px solid #FFF;
+	border-bottom: 1px solid #DBDBB0;
+	clear: both;
+	overflow: auto;
+}
+
+#pages .finished {
+	background: #DAEBCF;
+}
+
+#pages .page .url,
+#pages .page .status,
+#pages .page .date,
+#pages .page .finish {
+	position: relative;
+	padding: 0 5px;
+	height: 40px;
+	line-height: 40px;
+	font-size: 12px;
+	color: #555;
+	float: left;
+}
+
+#pages .page .url {
+	width: 290px;
+	text-decoration: none;
+}
+
+#pages .page .url:hover {
+	text-decoration: underline;
+}
+
+#pages .page .status {
+	width: 60px; 
+}
+
+#pages .page .date {
+	width: 60px; 
+}
+
+#pages .page .finish {
+	width: 60px; 
 }

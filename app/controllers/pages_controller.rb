@@ -36,4 +36,12 @@ class PagesController < ApplicationController
     end
   end
   
+  def destroy
+    Page.delete( params[:id] )
+    
+    respond_to do |format|
+      format.html { redirect_to dashboard_path, :notice => "Page deleted!" }
+    end
+  end
+  
 end

@@ -2,7 +2,7 @@
 	"name": "Save to BucketRead",
 	"version": "1.0",
 	"permissions": [
-		"tabs", "http://*/*", "https://*/*"
+		"http://localhost:3000/*", "http://*/*", "https://*/*"
 	],
 	"browser_action": {
 		"default_title": "Save to BucketRead",

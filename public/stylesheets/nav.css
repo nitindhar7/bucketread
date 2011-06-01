@@ -19,6 +19,7 @@
 
 #nav .tab:hover {
 	color: #333;
+	cursor: pointer;
 }
 
 #nav_logo {

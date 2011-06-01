@@ -17,4 +17,12 @@ class Page < ActiveRecord::Base
     end
   end
   
+  def formatted_url
+    if url.length > 65
+      "#{self.url[0..65]}..."
+    else
+      self.url
+    end
+  end
+  
 end

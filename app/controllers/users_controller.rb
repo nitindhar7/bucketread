@@ -16,24 +16,28 @@ class UsersController < ApplicationController
     end
   end
   
-  def login
-  end
-  
   def authorize
     @user = User.authenticate( params[:email], params[:password] )
-    if @user
-      session[:user_id] = @user.id
-      flash[:notice] = "Logged in!"
-      redirect_to dashboard_path
-    else
-      flash[:error] = "Invalid Email or Password"
-      redirect_to login_path
+    
+    respond_to do |format|
+      if @user
+        session[:user_id] = @user.id
+        flash[:notice] = "Logged in!"
+        format.html { redirect_to dashboard_path }
+        format.json do
+          @pages = Page.find( :all, :order => "updated_at", :conditions => { :user_id => current_user.id } )
+          render :json => @pages
+        end
+      else
+        flash[:error] = "Invalid Email or Password"
+        format.html { redirect_to root_path }
+        format.json { render :json => nil }
+      end
     end
   end
   
   def logout
     session[:user_id] = nil
-    redirect_to login_path, :notice => "Logged Out!"
+    redirect_to root_path, :notice => "Logged Out!"
   end
-  
 end

@@ -1,0 +1,13 @@
+#messages {
+	margin: auto;
+	width: 900px;
+	line-height: 30px;
+	font-weight: bold;
+	text-align: center;
+	color: #FFF;
+	background: #555;
+	-moz-border-radius-bottomleft: 5px;
+	-moz-border-radius-bottomright: 5px;
+	-webkit-border-bottom-left-radius: 5px;
+	-webkit-border-bottom-right-radius: 5px;
+}

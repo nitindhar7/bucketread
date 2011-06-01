@@ -2,6 +2,34 @@
 
 <div id="main_logo"></div>
 
+<div id="main_actions">
+	<% form_tag authorize_path, :method => :post, :id => "login_form" do %>
+		<div class="title">Login</div>
+		<%= label_tag :email %>
+		<%= text_field_tag :email, params[:email], :class => "field" %>
+		<%= label_tag :password %>
+		<%= password_field_tag :password, nil, :class => "field" %>
+		<%= submit_tag "Login", :class => "button" %>
+	<% end %>
+	
+	<% form_for(@user) do |f| %>
+		<div class="title">Sign Up</div>
+		<%= f.error_messages %>
+		
+		<%= f.label :first_name %>
+		<%= f.text_field :first_name, :class => "field" %>
+		<%= f.label :last_name %>
+		<%= f.text_field :last_name, :class => "field" %>
+		<%= f.label :email %>
+		<%= f.text_field :email, :class => "field" %>
+		<%= f.label :password %>
+		<%= f.password_field :password, :class => "field" %>
+		<%= f.label :password_confirmation %>
+		<%= f.password_field :password_confirmation, :class => "field" %>
+		<%= f.submit "Sign Up", :class => "button" %>
+	<% end %>
+</div>
+
 <div id="main_content">
 	<div class="row">
 		<div class="cell">

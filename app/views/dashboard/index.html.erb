@@ -1,5 +1,6 @@
 <%= render :partial => "shared/messages" %>
 <%= render :partial => "shared/nav" %>
+<%= render :partial => "account" %>
 
 <div id="pages">
 	
@@ -16,20 +17,16 @@
 	<div id="window">
 		<% for page in @unlocked_pages %>
 		<div class="page">
-			<%= link_to page.formatted_url, page.url, :class => "url", :target => "_blank" %>
-			<div class="status"><%= page.status_in_words %></div>
-			<div class="date"><%= page.created_at.strftime( "%m/%d/%Y" ) %></div>
-			<%= link_to "Finish Reading", finish_page_path( page ), :class => "finish" %>
-			<%= link_to "Remove", page_path( page ), :method => :delete, :class => "remove" %>
+			<%= link_to "", finish_page_path( page ), :class => "status unlocked", :title => "Lock It!" %>
+			<%= link_to page.formatted_url, page.url, :target => "_blank", :class => "url", :target => "_blank" %>
+			<%= link_to "", page_path( page ), :method => :delete, :class => "remove", :title => "Delete" %>
 		</div>
 		<% end %>
 		<% for page in @locked_pages %>
 		<div class="page finished">
-			<%= link_to page.formatted_url, page.url, :class => "url" %>
-			<div class="status"><%= page.status_in_words %></div>
-			<div class="date"><%= page.created_at.strftime( "%m/%d/%Y" ) %></div>
-			<%= link_to "Read Again", again_page_path( page ), :class => "again" %>
-			<%= link_to "Remove", page_path( page ), :method => :delete, :class => "remove" %>
+			<%= link_to "", again_page_path( page ), :class => "status locked", :title => "Unlock It!" %>
+			<%= link_to page.formatted_url, page.url, :target => "_blank", :class => "url" %>
+			<%= link_to "", page_path( page ), :method => :delete, :class => "remove", :title => "Delete", :confirm => "Delete URL?" %>
 		</div>
 		<% end %>
 		<div id="placeholder"></div>

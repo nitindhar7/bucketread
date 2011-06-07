@@ -2,3 +2,4 @@ config/database.yml
 .loadpath
 .project
 log/*.log
+config/initializers/omniauth.rb

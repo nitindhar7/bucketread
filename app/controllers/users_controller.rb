@@ -8,11 +8,12 @@ class UsersController < ApplicationController
   
   def create
     @user = User.new( params[:user] )
+    
     if @user.save
       session[:user_id] = @user.id
       redirect_to dashboard_path, :notice => "Signed Up!"
     else
-      render "new"
+      redirect_to root_path, :notice => "Sign Up Failed!"
     end
   end
   
@@ -22,14 +23,14 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user
         session[:user_id] = @user.id
-        flash[:notice] = "Logged in!"
+        flash[:notice] = "Logged In!"
         format.html { redirect_to dashboard_path }
         format.json do
           @pages = Page.find( :all, :order => "updated_at", :conditions => { :user_id => current_user.id } )
           render :json => @pages
         end
       else
-        flash[:error] = "Invalid Email or Password"
+        flash[:notice] = "Invalid Email or Password"
         format.html { redirect_to root_path }
         format.json { render :json => nil }
       end
@@ -40,4 +41,30 @@ class UsersController < ApplicationController
     session[:user_id] = nil
     redirect_to root_path, :notice => "Logged Out!"
   end
+  
+  def update
+    @user = User.find( params[:id] )
+    if @user.update_attributes( params[:user] )
+      redirect_to dashboard_path, :notice => "Account Updated!"
+    else
+      redirect_to dashboard_path, :notice => "Account was not updated!"
+    end
+  end
+  
+  def login_with_twitter
+    auth = request.env["omniauth.auth"]
+    provider = Provider.find_by_name_and_uid( auth["provider"], auth["uid"] )
+    @user = User.find( provider.user_id )
+    
+    if @user
+      session[:user_id] = @user.id
+      session[:auth] = auth
+      flash[:notice] = "Logged In!"
+      redirect_to dashboard_path
+    else
+      flash[:notice] = "Invalid Email or Password"
+      redirect_to root_path
+    end
+  end
+  
 end

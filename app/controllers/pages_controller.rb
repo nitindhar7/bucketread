@@ -10,7 +10,7 @@ class PagesController < ApplicationController
     if @page.save
       redirect_to dashboard_path, :notice => "Added Page!"
     else
-      render "new"
+      redirect_to dashboard_path, :notice => "Page not added!"
     end
   end
   

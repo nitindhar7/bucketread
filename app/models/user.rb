@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
   
   # ASSOCIATIONS
   has_many :pages
+  has_many :providers
   
   # FILTERS
   before_save :encrypt_password
@@ -21,7 +22,7 @@ class User < ActiveRecord::Base
   
   # METHODS
   def self.authenticate(email, password)
-    user = find_by_email( email )
+    user = find( :first, :conditions => ['email = ?', email] )
     if user && user.password_hash == User.hashify_password( password, user.password_salt )
       user
     else

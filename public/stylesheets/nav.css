@@ -40,6 +40,19 @@
 	cursor: pointer;
 }
 
+#login_with_twitter {
+	margin: 13px 0;
+	width: 151px;
+	height: 24px;
+	line-height: 25px;
+	cursor: pointer;
+	background: url(/images/sign-in-with-twitter-d.png) no-repeat;
+}
+
+#login_with_twitter:hover {
+	opacity: .8;
+}
+
 #nav_logo {
 	position: relative;
 	width: 368px;

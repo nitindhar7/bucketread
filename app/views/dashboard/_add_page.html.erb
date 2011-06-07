@@ -1,0 +1,5 @@
+<% form_remote_tag :url => pages_path, :method => :post, :html => { :id => "add_page" } do %>
+	<%= text_field_tag :url, nil, :class => "field" %>
+	<%= hidden_field_tag :user_id, nil, :value => current_user.id %>
+	<%= submit_tag 'Add Page', :class => "button" %>
+<% end %>

@@ -8,25 +8,23 @@
 		<div class="top_control add_page">Add Link +</div>
 	</div>
 	
-	<% form_remote_tag :url => pages_path, :method => :post, :html => { :id => "add_page" } do %>
-		<%= text_field_tag :url, nil, :class => "field" %>
-		<%= hidden_field_tag :user_id, nil, :value => current_user.id %>
-		<%= submit_tag 'Add Page', :class => "button" %>
-	<% end %>
+	<%= render :partial => "add_page" %>
 	
 	<div id="window">
 		<% for page in @unlocked_pages %>
 		<div class="page">
-			<%= link_to "", finish_page_path( page ), :class => "status unlocked", :title => "Lock It!" %>
 			<%= link_to page.formatted_url, page.url, :target => "_blank", :class => "url", :target => "_blank" %>
+			<%= link_to "", finish_page_path( page ), :class => "status unlocked", :title => "Lock It!" %>
 			<%= link_to "", page_path( page ), :method => :delete, :class => "remove", :title => "Delete" %>
+			<%= link_to "t", tweet_page_path( page ), :class => "tweet", :title => "Tweet It!" %>
 		</div>
 		<% end %>
 		<% for page in @locked_pages %>
 		<div class="page finished">
-			<%= link_to "", again_page_path( page ), :class => "status locked", :title => "Unlock It!" %>
 			<%= link_to page.formatted_url, page.url, :target => "_blank", :class => "url" %>
+			<%= link_to "", again_page_path( page ), :class => "status locked", :title => "Unlock It!" %>
 			<%= link_to "", page_path( page ), :method => :delete, :class => "remove", :title => "Delete", :confirm => "Delete URL?" %>
+			<%= link_to "t", tweet_page_path( page ), :class => "tweet", :title => "Tweet It!" %>
 		</div>
 		<% end %>
 		<div id="placeholder"></div>

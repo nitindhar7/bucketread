@@ -40,6 +40,7 @@ class UsersController < ApplicationController
   def logout
     session[:user_id] = nil
     session[:auth] = nil
+    session[:twitter_client] = nil
     redirect_to root_path, :notice => "Logged Out!"
   end
   
@@ -58,7 +59,7 @@ class UsersController < ApplicationController
     
     if provider
       @user = User.find( provider.user_id )
-    else#94414262
+    else
       @user = User.new
       @user.first_name = auth['user_info']['name'].split( ' ' ).first
       @user.last_name = auth['user_info']['name'].split( ' ' ).last
@@ -73,12 +74,26 @@ class UsersController < ApplicationController
     if @user
       session[:user_id] = @user.id
       session[:auth] = auth
+      session[:twitter_client] = config_twitter
       flash[:notice] = "Logged In!"
       redirect_to dashboard_path
     else
       flash[:notice] = "Invalid Email or Password"
       redirect_to root_path
     end
+  end
+  
+  private
+
+  def config_twitter
+    Twitter.configure do |config|
+      config.consumer_key = '509Q6f4idqCSlE4diJNw'
+      config.consumer_secret = 'K3iKXvhiZqt2V0BsYcXbjTuPEe5KflWWvcVIiVHUPgw'
+      config.oauth_token = session[:auth]['extra']['access_token'].params["oauth_token"]
+      config.oauth_token_secret = session[:auth]['extra']['access_token'].params["oauth_token"]
+    end
+    
+    Twitter::Client.new
   end
   
 end

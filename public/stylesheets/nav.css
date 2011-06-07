@@ -47,10 +47,11 @@
 	line-height: 25px;
 	cursor: pointer;
 	background: url(/images/sign-in-with-twitter-d.png) no-repeat;
+	opacity: .8;
 }
 
 #login_with_twitter:hover {
-	opacity: .8;
+	opacity: 1;
 }
 
 #nav_logo {

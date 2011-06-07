@@ -4,11 +4,11 @@
 		<div id="tabs">
 			<div id="welcome">Welcome, <%= current_user.full_name %></div>
 			<%= link_to "Logout", logout_user_path( session[:user_id] ), :class => "tab" %>
-			<div class="tab" id="account_tab">Account</div>
-			<%= link_to "Dashboard", dashboard_path, :class => "tab" %>
+			<div class="tab" id="account_tab">Settings</div>
+			<%= link_to "My Bucket", dashboard_path, :class => "tab" %>
 		</div>
 	<% else %>
 		<%= link_to "", "/auth/twitter", :id => "login_with_twitter", :class => "tab" %>
-		<div class="tab main_actions">Sign Up / Login</div>
+		<div class="tab main_actions">Sign Up | Login</div>
 	<% end %>
 </div>

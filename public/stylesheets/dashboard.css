@@ -120,30 +120,6 @@
 	font-size: 12px;
 }
 
-#alternate_login {
-	margin-top: 20px;
-	width: 400px;
-	height: 80px;
-	border-top: 5px solid #DDD;
-}
-
-#alternate_login .button {
-	margin-top: 10px;
-	padding: 0 5px;
-	width: 151px;
-	height: 24px;
-	line-height: 25px;
-	cursor: pointer;
-}
-
-#login_with_twitter {
-	background: url(/images/sign-in-with-twitter-d.png) no-repeat;
-}
-
-#login_with_twitter:hover {
-	opacity: .8;
-}
-
 /*
  * INDEX
  */

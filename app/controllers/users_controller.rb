@@ -39,6 +39,7 @@ class UsersController < ApplicationController
   
   def logout
     session[:user_id] = nil
+    session[:auth] = nil
     redirect_to root_path, :notice => "Logged Out!"
   end
   
@@ -54,7 +55,20 @@ class UsersController < ApplicationController
   def login_with_twitter
     auth = request.env["omniauth.auth"]
     provider = Provider.find_by_name_and_uid( auth["provider"], auth["uid"] )
-    @user = User.find( provider.user_id )
+    
+    if provider
+      @user = User.find( provider.user_id )
+    else#94414262
+      @user = User.new
+      @user.first_name = auth['user_info']['name'].split( ' ' ).first
+      @user.last_name = auth['user_info']['name'].split( ' ' ).last
+      @user.email = "#{auth['user_info']['nickname']}@bucketread.com"
+      @user.password = (0...8).map{65.+(rand(25)).chr}.join
+      @user.password_confirmation = @user.password
+      @user.save
+      
+      Provider.create( :name => auth['provider'], :uid => auth['uid'], :user_id => @user.id )
+    end
     
     if @user
       session[:user_id] = @user.id

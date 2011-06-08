@@ -10,6 +10,7 @@ ActionController::Routing::Routes.draw do |map|
   map.api_authorize "authorize.:format", :controller => :users, :action => :authorize, :format => :format
   map.dashboard "dashboard", :controller => :dashboard
 
+  map.connect "/auth/:provider", :controller => :users, :action => :blank
   map.connect "/auth/:provider/callback", :controller => :users, :action => :login_with_twitter
   map.connect ':controller/:action/:id'
   map.connect ':controller/:action/:id.:format'

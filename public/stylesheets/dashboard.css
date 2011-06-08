@@ -305,6 +305,16 @@
 	background: url(/images/stripe_40_100.png) repeat-x;
 }
 
+#placeholder .message {
+	padding: 20px;
+	width: 860px;
+	height: 60px;
+	text-align: center;
+	font-size: 14px;
+	font-weight: bold;
+	color: #555;
+}
+
 /*
  * ACCOUNT
  */

@@ -88,6 +88,10 @@ class UsersController < ApplicationController
     render :text => "Not Found", :status => 404
   end
   
+  def failure
+    redirect_to dashboard_path, :notice => "Login with Twitter failed!"
+  end
+  
   private
 
   def config_twitter(credentials)

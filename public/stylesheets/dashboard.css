@@ -12,6 +12,7 @@
 #main_content {
 	margin: auto;
 	margin-top: 10px;
+	margin-bottom: 10px;
 	width: 900px;
 	height: 500px;
 }
@@ -126,7 +127,6 @@
 
 #pages {
 	margin: auto;
-	margin-bottom: 10px;
 	width: 900px;
 	min-height: 600px;
 	background: #DDD;
@@ -223,10 +223,10 @@
 
 #window .page .url,
 #window .page .status,
-#window .page .date,
-#window .page .finish,
-#window .page .again,
-#window .page .remove {
+#window .page .unlocked,
+#window .page .locked,
+#window .page .remove,
+#window .page .tweet {
 	position: relative;
 	height: 18px;
 	line-height: 18px;
@@ -235,7 +235,7 @@
 }
 
 #window .page .url {
-	width: 500px;
+	width: 700px;
 	text-decoration: none;
 }
 
@@ -251,27 +251,16 @@
 	opacity: .6;
 }
 
+#window .page .status:hover {
+	opacity: 1;
+}
+
 #window .page .unlocked {
 	background-position: -208px -96px;
 }
 
 #window .page .locked {
 	background-position: -192px -96px;
-}
-
-#window .page .locked:hover,
-#window .page .unlocked:hover {
-	opacity: 1;
-}
-
-#window .page .date {
-	width: 95px;
-}
-
-#window .page .finish,
-#window .page .again {
-	width: 125px;
-	font-weight: bold;
 }
 
 #window .page .remove {
@@ -286,6 +275,28 @@
 
 #window .page .remove:hover {
 	opacity: 1;
+}
+
+#window .page .tweet {
+	margin: 1px 0;
+	width: 16px;
+	height: 16px;
+	line-height: 16px;
+	font-size: 14px;
+	font-weight: bold;
+	text-align: center;
+	text-decoration: none;
+	color: #555;
+}
+
+#window .page .tweet:hover {
+	color: #9AE4E8;
+}
+
+#window .page .status,
+#window .page .remove,
+#window .page .tweet {
+	float: right;
 }
 
 #placeholder {

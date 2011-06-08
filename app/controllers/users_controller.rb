@@ -69,12 +69,13 @@ class UsersController < ApplicationController
       @user.save
       
       Provider.create( :name => auth['provider'], :uid => auth['uid'], :user_id => @user.id )
+      
+      config_twitter( auth['credentials'] ).update( "I just signed up for @BucketRead ... Get your free account today http://bucketread.basedataapp.com!" )
     end
     
     if @user
       session[:user_id] = @user.id
       session[:auth] = auth
-      session[:twitter_client] = config_twitter
       flash[:notice] = "Logged In!"
       redirect_to dashboard_path
     else
@@ -85,15 +86,15 @@ class UsersController < ApplicationController
   
   private
 
-  def config_twitter
+  def config_twitter(credentials)
     Twitter.configure do |config|
       config.consumer_key = '509Q6f4idqCSlE4diJNw'
       config.consumer_secret = 'K3iKXvhiZqt2V0BsYcXbjTuPEe5KflWWvcVIiVHUPgw'
-      config.oauth_token = session[:auth]['extra']['access_token'].params["oauth_token"]
-      config.oauth_token_secret = session[:auth]['extra']['access_token'].params["oauth_token"]
+      config.oauth_token = credentials['token']
+      config.oauth_token_secret = credentials['secret']
     end
     
-    Twitter::Client.new
+    session[:twitter_client] = Twitter::Client.new
   end
   
 end

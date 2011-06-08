@@ -2,13 +2,16 @@
 <html>
 <head>
 	<title>BucketRead | Dashboard</title>
-	<%= stylesheet_link_tag "jquery.autocomplete", "default", "nav", "messages", "dashboard" %>
+	<%= stylesheet_link_tag "jquery.autocomplete", "default", "nav", "messages", "footer", "dashboard" %>
 	<%= javascript_include_tag "jquery", "jqueryui", "jquery.autocomplete", "jquery.tooltip", "jrails", "default", "dashboard" %>
 	
 	<link rel="icon" href="/images/favicon.ico" type="image/x-icon"> 
 	<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon"> 
 </head>
 <body>
+	<%= render :partial => "shared/messages" %>
+	<%= render :partial => "shared/nav" %>
 	<%= yield %>
+	<%= render :partial => "shared/footer" %>
 </body>
 </html>

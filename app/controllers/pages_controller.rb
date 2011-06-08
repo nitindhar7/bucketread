@@ -44,4 +44,10 @@ class PagesController < ApplicationController
     end
   end
   
+  def tweet
+    @page = Page.find( params[:id] )
+    session[:twitter_client].update( "I found this interesting: #{@page.url} @BucketRead" )
+    redirect_to dashboard_path, :notice => "Tweeted Link!"
+  end
+  
 end

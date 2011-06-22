@@ -7,28 +7,28 @@
 
 #tabs {
 	position: relative;
-	width: 400px;
+	width: 500px;
 	height: 75px;
 	float: right;
 }
 
 #welcome {
 	position: relative;
-	width: 400px;
-	height: 25px;
-	line-height: 25px;
+	width: 500px;
+	height: 35px;
+	line-height: 35px;
 	font-size: 12px;
 	float: right;
 	text-align: right;
-	color: #555;
+	color: #999;
 }
 
 #nav .tab {
 	position: relative;
-	margin-left: 20px;
-	min-width: 50px;
-	height: 50px;
-	line-height: 50px;
+	margin-left: 30px;
+	min-width: 10px;
+	height: 40px;
+	line-height: 40px;
 	font-size: 14px;
 	float: right;
 	color: #999;
@@ -41,10 +41,10 @@
 }
 
 #login_with_twitter {
-	margin: 13px 0;
+	margin: 8px 0;
 	width: 151px;
 	height: 24px;
-	line-height: 25px;
+	line-height: 24px;
 	cursor: pointer;
 	background: url(/images/sign-in-with-twitter-d.png) no-repeat;
 	opacity: .8;

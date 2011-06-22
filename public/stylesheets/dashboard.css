@@ -32,7 +32,7 @@
 }
 
 #main_content .row .cell .title {
-	width: 440px;
+	width: 420px;
 	height: 30px;
 	line-height: 30px;
 	font-size: 18px;
@@ -40,7 +40,7 @@
 }
 
 #main_content .row .cell .body {
-	width: 440px;
+	width: 420px;
 	height: 100px;
 	line-height: 20px;
 	font-size: 14px;
@@ -48,7 +48,7 @@
 }
 
 #main_content .row .cell .body .list {
-	width: 440px;
+	width: 420px;
 	line-height: 20px;
 	font-size: 14px;
 	color: #555;
@@ -372,7 +372,7 @@
 #faqs {
 	margin: auto;
 	padding: 20px;
-	width: 880px;
+	width: 860px;
 	border: 1px solid #DDD;
 	background: #EEE;
 	-moz-border-radius: 5px;
@@ -381,23 +381,23 @@
 
 #faqs .title {
 	margin-bottom: 10px;
-	width: 880px;
+	width: 860px;
 	height: 50px;
 	line-height: 50px;
 	font-size: 40px;
 	font-weight: bold;
-	color: #333;
+	color: #900;
 	text-shadow: #FFF 1px 1px 2px;
 }
 
 #faqs .faq {
 	margin-top: 20px;
-	width: 880px;
+	width: 860px;
 }
 
 #faqs .faq .question,
 #faqs .faq .answer {
-	width: 880px;
+	width: 860px;
 	line-height: 25px;
 	font-size: 16px;
 	color: #666;
@@ -405,5 +405,5 @@
 
 #faqs .faq .question {
 	text-shadow: #FFF 1px 1px 1px;
-	color: #900;
+	font-weight: bold;
 }

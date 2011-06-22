@@ -10,7 +10,8 @@
 		</div>
 	<% else %>
 		<!-- <%= link_to "", "/auth/twitter", :id => "login_with_twitter", :class => "tab" %> -->
-		<%= link_to "FAQs", faq_path, :class => "tab" %>
 		<div class="tab main_actions">Sign Up | Login</div>
+		<%= link_to "FAQs", faq_path, :class => "tab" %>
+		<%= link_to "Home", root_path, :class => "tab" %>
 	<% end %>
 </div>

@@ -4,7 +4,7 @@
 		<div id="tabs">
 			<div id="welcome">Welcome, <%= current_user.full_name %></div>
 			<%= link_to "Logout", logout_user_path( session[:user_id] ), :class => "tab" %>
-			<%= link_to "API", api_path, :class => "tab" %>
+			<!-- <%= link_to "API", api_path, :class => "tab" %> -->
 			<%= link_to "FAQs", faqs_path, :class => "tab" %>
 			<div class="tab" id="account_tab">Settings</div>
 			
@@ -14,7 +14,8 @@
 		<div id="tabs">
 			<!-- <%= link_to "", "/auth/twitter", :id => "login_with_twitter", :class => "tab" %> -->
 			<div class="tab main_actions">Sign Up | Login</div>
-			<%= link_to "FAQs", faq_path, :class => "tab" %>
+			<!-- <%= link_to "API", api_path, :class => "tab" %> -->
+			<%= link_to "FAQs", faqs_path, :class => "tab" %>
 			<%= link_to "Home", root_path, :class => "tab" %>
 		</div>
 	<% end %>

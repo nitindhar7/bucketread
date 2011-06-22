@@ -11,10 +11,10 @@
 	<div id="window">
 		<% for page in @unlocked_pages %>
 		<div class="page">
-			<%= link_to page.formatted_url, page.url, :target => "_blank", :class => "url", :target => "_blank" %>
+			<%= link_to page.formatted_url, page.url, :target => "_blank", :class => "url" %>
 			<%= link_to "", page_path( page ), :method => :delete, :class => "remove", :title => "Delete" %>
 			<%= link_to "", finish_page_path( page ), :class => "status unlocked", :title => "Lock It!" %>
-			<%= link_to "t", tweet_page_path( page ), :class => "tweet", :title => "Tweet It!" %>
+			<!-- <%= link_to "t", tweet_page_path( page ), :class => "tweet", :title => "Tweet It!" %> -->
 		</div>
 		<% end %>
 		<% for page in @locked_pages %>
@@ -22,7 +22,7 @@
 			<%= link_to page.formatted_url, page.url, :target => "_blank", :class => "url" %>
 			<%= link_to "", page_path( page ), :method => :delete, :class => "remove", :title => "Delete", :confirm => "Delete URL?" %>
 			<%= link_to "", again_page_path( page ), :class => "status locked", :title => "Unlock It!" %>
-			<%= link_to "t", tweet_page_path( page ), :class => "tweet", :title => "Tweet It!" %>
+			<!-- <%= link_to "t", tweet_page_path( page ), :class => "tweet", :title => "Tweet It!" %> -->
 		</div>
 		<% end %>
 		<div id="placeholder">

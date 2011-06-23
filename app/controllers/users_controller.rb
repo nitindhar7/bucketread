@@ -25,6 +25,7 @@ class UsersController < ApplicationController
         session[:user_id] = @user.id
         flash[:notice] = "Logged In!"
         format.html { redirect_to dashboard_path }
+        format.xml { render :text => @user.to_xml( :skip_types => true, :dasherize => false, :except => [:password_hash, :password_salt] ) }
         format.json do
           @pages = Page.find( :all, :order => "updated_at", :conditions => { :user_id => current_user.id } )
           render :json => @pages

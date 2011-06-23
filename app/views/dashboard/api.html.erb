@@ -11,6 +11,52 @@
 	<div id="api_index">
 		<div class="title">Available API Actions</div>
 		Here are some examples of supported API commands, and the corresponding responses. These examples are shown in the form of 'curl' commands. Curl is a command line utility used to perform HTTP requests, and is available on most Unix systems, but you can use any tool or language which can submit a corresponding HTTP request.
+		<div class="topic">Login</div>
+		<div class="action">Via POST</div>
+		<div class="topic">Get Pages</div>
+		<div class="action">All Pages</div>
+		<div class="action">Single Page</div>
+		<div class="topic">Manage Pages</div>
+		<div class="action">Add Page</div>
+		<div class="action">Remove Page</div>
+		<div class="action">Lock Page</div>
+		<div class="action">Unlock Page</div>
 	</div>
-	
+	<div id="api_details">
+		<div class="title">API Action Details</div>
+		<div class="topic" id="api_topic_login">Login</div>
+		<div class="action" id="api_action_via_post">Via POST</div>
+		<div class="path">curl -d email=<span>$EMAIL</span> -d password=<span>$PASSWORD</span> -X POST http://bucketread.basedataapp.com/authorize.xml</div>
+		<div class="response">
+			&lt;?xml version="1.0" encoding="UTF-8"?&gt;<br/>
+			&lt;user&gt;<br/>
+			  &nbsp;&nbsp;&nbsp;&nbsp;&lt;created_at&gt;2011-06-22T03:20:45Z&lt;/created_at&gt;<br/>
+			  &nbsp;&nbsp;&nbsp;&nbsp;&lt;email&gt;nitindhar7@yahoo.com&lt;/email&gt;<br/>
+			  &nbsp;&nbsp;&nbsp;&nbsp;&lt;first_name&gt;Nitin&lt;/first_name&gt;<br/>
+			  &nbsp;&nbsp;&nbsp;&nbsp;&lt;id&gt;8&lt;/id&gt;<br/>
+			  &nbsp;&nbsp;&nbsp;&nbsp;&lt;last_name&gt;Dhar&lt;/last_name&gt;<br/>
+			  &nbsp;&nbsp;&nbsp;&nbsp;&lt;updated_at&gt;2011-06-22T03:20:45Z&lt;/updated_at&gt;<br/>
+			&lt;/user&gt;
+		</div>
+		<div class="topic" id="api_topic_get_pages">Get Pages</div>
+		<div class="action" id="api_action_all_pages">All Pages</div>
+		<div class="path">curl -d email=<span>$EMAIL</span> -d password=<span>$PASSWORD</span> -X POST http://bucketread.basedataapp.com/authorize.xml</div>
+		<div class="response">
+			&lt;?xml version="1.0" encoding="UTF-8"?&gt;<br/>
+			&lt;user&gt;<br/>
+			  &nbsp;&nbsp;&nbsp;&nbsp;&lt;created_at&gt;2011-06-22T03:20:45Z&lt;/created_at&gt;<br/>
+			  &nbsp;&nbsp;&nbsp;&nbsp;&lt;email&gt;nitindhar7@yahoo.com&lt;/email&gt;<br/>
+			  &nbsp;&nbsp;&nbsp;&nbsp;&lt;first_name&gt;Nitin&lt;/first_name&gt;<br/>
+			  &nbsp;&nbsp;&nbsp;&nbsp;&lt;id&gt;8&lt;/id&gt;<br/>
+			  &nbsp;&nbsp;&nbsp;&nbsp;&lt;last_name&gt;Dhar&lt;/last_name&gt;<br/>
+			  &nbsp;&nbsp;&nbsp;&nbsp;&lt;updated_at&gt;2011-06-22T03:20:45Z&lt;/updated_at&gt;<br/>
+			&lt;/user&gt;
+		</div>
+		<div class="action" id="api_action_single_page">Single Page</div>
+		<div class="topic" id="api_topic_manage_pages">Manage Pages</div>
+		<div class="action" id="api_action_add_page">Add Page</div>
+		<div class="action" id="api_action_remove_page">Remove Page</div>
+		<div class="action" id="api_action_lock_page">Lock Page</div>
+		<div class="action" id="api_action_unlock_page">Unlock Page</div>
+	</div>
 </div>

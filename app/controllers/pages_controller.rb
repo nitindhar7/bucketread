@@ -2,6 +2,14 @@ class PagesController < ApplicationController
   
   before_filter :auth_login
   
+  def index
+    @pages = Page.find( :all, :conditions => { :user_id => session[:user_id] } )
+    
+    respond_to do |format|
+      format.xml { render :xml => @pages }
+    end
+  end
+  
   def create
     @page = Page.new
     @page.url = params[:url]

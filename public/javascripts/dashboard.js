@@ -1,7 +1,11 @@
 $( document ).ready(function() {
-	$( "#top_controls .add_page" ).live("click", function() {
-		$( "#add_page" ).slideToggle( "fast" );
-		$( "#url" ).focus();
+	
+	$( "#placeholder .message span" ).live("click", function() {
+		displayAddPageForm();
+	});
+	
+	$( "#top_control_add_page" ).live("click", function() {
+		displayAddPageForm();
 	});
 	
 	$( "#nav .main_actions" ).live("click", function() {
@@ -26,3 +30,9 @@ $( document ).ready(function() {
 			$account.show();
 	});
 });
+
+function displayAddPageForm()
+{
+	$( "#add_page" ).slideToggle( "fast" );
+	$( "#url" ).focus();
+}

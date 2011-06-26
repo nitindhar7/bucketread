@@ -17,6 +17,10 @@ class UsersController < ApplicationController
     end
   end
   
+  def login
+    @user = User.new
+  end
+  
   def authorize
     @user = User.authenticate( params[:email], params[:password] )
     
@@ -42,7 +46,7 @@ class UsersController < ApplicationController
     session[:user_id] = nil
     session[:auth] = nil
     session[:twitter_client] = nil
-    redirect_to root_path, :notice => "Logged Out!"
+    redirect_to login_path, :notice => "Logged Out!"
   end
   
   def update

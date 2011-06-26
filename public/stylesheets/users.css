@@ -1,0 +1,78 @@
+/*
+ * LOGIN
+ */
+#main_content_wrapper {
+	width: 100%;
+	background: #F5F5F5;
+	background: -moz-linear-gradient(top, #F5F5F5, #EEE);
+	background: -webkit-gradient(linear, left top, left bottom, from(#F5F5F5), to(#EEE));
+	border-top: 1px solid #CCC;
+	border-bottom: 1px solid #CCC;
+}
+
+#main_content {
+	margin: auto;
+	padding: 10px 0;
+	width: 900px;
+}
+
+#new_user,
+#login_form {
+	width: 598px;
+	background: #F0F0FF;
+	border: 1px solid #FFF;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-box-shadow: 0 0 1px #333;
+	-webkit-box-shadow: 0 0 1px #333;
+}
+
+#new_user .title,
+#login_form .title {
+	padding: 10px;
+	width: 578px;
+	height: 49px;
+	line-height: 49px;
+	color: #900;
+	text-shadow: #FFF 1px 1px 2px;
+	font-size: 26px;
+	font-weight: bold;
+	border-bottom: 1px solid #FFF; 
+}
+
+#new_user .content,
+#login_form .content {
+	padding: 20px;
+	width: 558px;
+	border-top: 1px solid #CCC;
+}
+
+#new_user .content label,
+#login_form .content label {
+	width: 558px;
+	height: 30px;
+	line-height: 30px;
+	font-size: 16px;
+	color: #333;
+	text-shadow: #FFF 1px 1px 2px;
+}
+
+#new_user .content .field,
+#login_form .content .field {
+	margin-bottom: 10px;
+	padding: 6px 5px;
+	width: 548px;
+	height: 16px;
+	line-height: 16px;
+	font-size: 16px;
+	text-shadow: #FFF 1px 1px 2px;
+	border: 1px solid #CCC;
+}
+
+#new_user .content .button,
+#login_form .content .button {
+	width: 70px;
+	height: 30px;
+	font-size: 14px;
+	text-shadow: #FFF 1px 1px 2px;
+}

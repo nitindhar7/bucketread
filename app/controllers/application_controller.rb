@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
   
   def auth_login
     unless current_user
-      redirect_to root_path, :notice => "Please Login or Signup"
+      redirect_to login_path, :notice => "Please Login or Signup"
     end
   end
   

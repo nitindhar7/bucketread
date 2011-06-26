@@ -1,6 +1,15 @@
 /*
  * WELCOME
  */
+#main_logo_wrapper {
+	width: 100%;
+	height: 300px;
+	background: #EEE;
+	background: -moz-linear-gradient(top, #EEE, #DDD);
+	background: -webkit-gradient(linear, left top, left bottom, from(#EEE), to(#DDD));
+	border-top: 1px solid #CCC;
+	border-bottom: 1px solid #CCC;
+}
 
 #main_logo {
 	margin: auto;
@@ -9,10 +18,17 @@
 	background: url(/images/bucketread_logo.png) no-repeat;
 }
 
+#main_content_wrapper {
+	width: 100%;
+	height: 500px;
+	background: #F5F5F5;
+	background: -moz-linear-gradient(top, #F5F5F5, #EEE);
+	background: -webkit-gradient(linear, left top, left bottom, from(#F5F5F5), to(#EEE));
+	border-top: 1px solid #FFF;
+}
+
 #main_content {
 	margin: auto;
-	margin-top: 10px;
-	margin-bottom: 10px;
 	width: 900px;
 	height: 500px;
 }
@@ -61,66 +77,6 @@
 	-webkit-box-shadow: inset 0 0 30px #000;
 }
 
-#main_actions {
-	margin: auto;
-	padding: 10px;
-	width: 880px;
-	background: #EEE;
-	display: none;
-	clear: both;
-	overflow: auto;
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
-	-moz-box-shadow: 0 0 5px #999;
-	-webkit-box-shadow: 0 0 5px #999;
-}
-
-#login_form,
-#new_user {
-	position: relative;
-	width: 440px;
-	float: left;
-}
-
-#login_form .title,
-#new_user .title {
-	margin-bottom: 10px;
-	width: 440px;
-	height: 20px;
-	line-height: 20px;
-	font-size: 16px;
-	color: #900;
-}
-
-#login_form label,
-#new_user label {
-	width: 440px;
-	height: 20px;
-	line-height: 20px;
-	font-size: 12px;
-	font-style: italic;
-	color: #666;
-}
-
-#login_form .field,
-#new_user .field {
-	margin-bottom: 10px;
-	padding: 5px;
-	width: 388px;
-	height: 18px;
-	line-height: 18px;
-	font-size: 12px;
-	color: #666;
-	border: 1px solid #999;
-}
-
-#login_form .button,
-#new_user .button {
-	width: 100px;
-	height: 30px;
-	font-size: 12px;
-}
-
 /*
  * INDEX
  */
@@ -140,9 +96,9 @@
 #top_controls {
 	width: 900px;
 	height: 28px;
-	z-index: 10;
-	background: #555;
-	border-bottom: 1px solid #FFF;
+	background: #EEE;
+	background: -moz-linear-gradient(top, #F5F5F5, #EEE);
+	background: -webkit-gradient(linear, left top, left bottom, from(#F5F5F5), to(#EEE));
 	-moz-border-radius-topleft: 5px;
 	-moz-border-radius-topright: 5px;
 	-webkit-border-top-left-radius: 5px;
@@ -152,21 +108,45 @@
 
 #top_controls .top_control {
 	position: relative;
-	padding: 0 5px;
-	min-width: 30px;
-	height: 28px;
-	line-height: 28px;
+	margin: 6px 5px;
+	width: 16px;
+	height: 16px;
 	color: #FFF;
-	font-weight: bold;
-	text-decoration: none;
 	float: left;
 	cursor: pointer;
+	background: url(/images/jqueryui-lightness.png) no-repeat;
 }
 
 #top_controls .top_control:hover {
-	background: #444;
 	-moz-border-radius-topleft: 5px;
 	-webkit-border-top-left-radius: 5px;
+}
+
+#top_controls #top_control_add_page {
+	background-position: 0 -192px;
+}
+
+#top_controls #top_control_add_page:hover {
+	background: url(/images/jqueryui-lightness-orange.png) no-repeat;
+	background-position: 0 -192px;
+}
+
+#top_controls #top_control_filter_locked_links {
+	background-position: -192px -96px;
+}
+
+#top_controls #top_control_filter_locked_links:hover {
+	background: url(/images/jqueryui-lightness-orange.png) no-repeat;
+	background-position: -192px -96px;
+}
+
+#top_controls #top_control_filter_unlocked_links {
+	background-position: -208px -96px;
+}
+
+#top_controls #top_control_filter_unlocked_links:hover {
+	background: url(/images/jqueryui-lightness-orange.png) no-repeat;
+	background-position: -208px -96px;
 }
 
 #add_page {
@@ -226,17 +206,21 @@
 #window .page .unlocked,
 #window .page .locked,
 #window .page .remove,
+#window .page .date,
 #window .page .tweet {
 	position: relative;
+	margin: 1px 5px;
 	height: 18px;
 	line-height: 18px;
 	color: #555;
-	float: left;
+	float: right;
 }
 
 #window .page .url {
+	margin: 0;
 	width: 700px;
 	text-decoration: none;
+	float: left;
 }
 
 #window .page .url:hover {
@@ -244,7 +228,6 @@
 }
 
 #window .page .status {
-	margin: 1px 0;
 	width: 16px;
 	height: 16px;
 	background: url(/images/jqueryui-lightness.png) no-repeat;
@@ -264,7 +247,6 @@
 }
 
 #window .page .remove {
-	margin: 1px 0;
 	width: 16px;
 	height: 16px;
 	font-weight: bold;
@@ -277,8 +259,19 @@
 	opacity: 1;
 }
 
+#window .page .date {
+	width: 16px;
+	height: 16px;
+	background: url(/images/jqueryui-lightness.png) no-repeat;
+	background-position: -112px -112px;
+	opacity: .6;
+}
+
+#window .page .date:hover {
+	opacity: 1;
+}
+
 #window .page .tweet {
-	margin: 1px 0;
 	width: 16px;
 	height: 16px;
 	line-height: 16px;
@@ -293,12 +286,6 @@
 	color: #9AE4E8;
 }
 
-#window .page .status,
-#window .page .remove,
-#window .page .tweet {
-	float: right;
-}
-
 #placeholder {
 	width: 900px;
 	height: 100px;
@@ -311,8 +298,17 @@
 	height: 60px;
 	text-align: center;
 	font-size: 14px;
-	font-weight: bold;
 	color: #555;
+}
+
+#placeholder .message span {
+	font-weight: bold;
+	display: inline-block;
+	cursor: pointer;
+}
+
+#placeholder .message span:hover {
+	text-decoration: underline;
 }
 
 /*

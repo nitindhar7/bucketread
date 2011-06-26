@@ -1,0 +1,22 @@
+<div id="main_content_wrapper">
+	<div id="main_content">
+		<% form_for(@user) do |f| %>
+			<div class="title">Sign Up & Organize Your Links</div>
+			<div class="content">
+				<%= f.error_messages %>
+				
+				<%= f.label :first_name %>
+				<%= f.text_field :first_name, :class => "field" %>
+				<%= f.label :last_name %>
+				<%= f.text_field :last_name, :class => "field" %>
+				<%= f.label :email %>
+				<%= f.text_field :email, :class => "field" %>
+				<%= f.label :password %>
+				<%= f.password_field :password, :class => "field" %>
+				<%= f.label :password_confirmation %>
+				<%= f.password_field :password_confirmation, :class => "field" %>
+				<%= f.submit "Sign Up", :class => "button" %>
+			</div>
+		<% end %>
+	</div>
+</div>

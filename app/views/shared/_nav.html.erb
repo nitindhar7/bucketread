@@ -4,19 +4,19 @@
 		<div id="tabs">
 			<div id="welcome">Welcome, <%= current_user.full_name %></div>
 			<%= link_to "Logout", logout_user_path( session[:user_id] ), :class => "tab" %>
-			<!-- <%= link_to "API", api_path, :class => "tab" %> -->
 			<%= link_to "FAQs", faqs_path, :class => "tab" %>
-			<div class="tab" id="account_tab">Settings</div>
-			
+			<div class="tab" id="account_tab">Settings</div>	
 			<%= link_to "My Bucket", dashboard_path, :class => "tab" %>
+			<!-- <%= link_to "API", api_path, :class => "tab" %> -->
 		</div>
 	<% else %>
 		<div id="tabs">
-			<!-- <%= link_to "", "/auth/twitter", :id => "login_with_twitter", :class => "tab" %> -->
-			<div class="tab main_actions">Sign Up | Login</div>
-			<!-- <%= link_to "API", api_path, :class => "tab" %> -->
+			<%= link_to "Sign Up", signup_path, :class => "tab", :id => "nav_signup_tab" %>
+			<%= link_to "Login", login_path, :class => "tab" %>
 			<%= link_to "FAQs", faqs_path, :class => "tab" %>
 			<%= link_to "Home", root_path, :class => "tab" %>
+			<!-- <%= link_to "API", api_path, :class => "tab" %> -->
+			<!-- <%= link_to "", "/auth/twitter", :id => "login_with_twitter", :class => "tab" %> -->
 		</div>
 	<% end %>
 </div>

@@ -1,11 +1,13 @@
 #messages {
-	margin: auto;
-	width: 900px;
+	position: fixed;
+	width: 100%;
 	line-height: 30px;
 	font-weight: bold;
 	text-align: center;
 	color: #FFF;
 	background: #555;
+	z-index: 100;
+	opacity: .7;
 	-moz-box-shadow: 0 0 30px #CCC;
 	-webkit-box-shadow: 0 0 30px #CCC;
 	-moz-border-radius-bottomleft: 5px;

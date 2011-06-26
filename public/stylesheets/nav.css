@@ -61,3 +61,23 @@
 	background: url(/images/bucketread_logo_nav.png) no-repeat;
 	float: left;
 }
+
+#nav_signup_tab {
+	margin-top: 5px;
+	height: 28px !important;
+	line-height: 28px !important;
+	padding: 0 30px;
+	background: #FC0;
+	background: -moz-linear-gradient(top, #FFE270, #FC0);
+	background: -webkit-gradient(linear, left top, left bottom, from(#FFE270), to(#FC0));
+	color: #665200 !important;
+	font-weight: bold;
+	text-shadow: #FFF 1px 1px 2px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border: 1px solid #FC0;
+}
+
+#nav_signup_tab:hover {
+	background: #FC0;
+}

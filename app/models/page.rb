@@ -16,4 +16,12 @@ class Page < ActiveRecord::Base
     end
   end
   
+  def status_in_words
+    if status == 0
+      'unfinished'
+    else
+      'finished'
+    end
+  end
+  
 end

@@ -24,4 +24,8 @@ class Page < ActiveRecord::Base
     end
   end
   
+  def standardized_url
+    'http://' + url unless url.match(/^[h][t][t][p][:][\/][\/]/)
+  end
+  
 end

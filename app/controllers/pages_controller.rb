@@ -12,7 +12,7 @@ class PagesController < ApplicationController
   
   def create
     @page = Page.new
-    @page.url = params[:url]
+    @page.url = params[:url].strip
     @page.user_id = params[:user_id]
     
     if @page.save

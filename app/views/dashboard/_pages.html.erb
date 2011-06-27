@@ -1,6 +1,6 @@
 <% for page in @pages %>
 	<div class="page <%= page.status_in_words %>">
-		<%= link_to page.formatted_url, page.url, :target => "_blank", :class => "url" %>
+		<%= link_to page.formatted_url, page.standardized_url, :target => "_blank", :class => "url" %>
 		<%= link_to "", page_path( page ), :method => :delete, :class => "remove", :title => "Delete", :confirm => "Delete URL?" %>
 		<% if page.status == 0 %>
 			<%= link_to "", finish_page_path( page ), :class => "status unlocked", :title => "Lock It!" %>

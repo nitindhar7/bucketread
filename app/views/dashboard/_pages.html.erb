@@ -1,0 +1,18 @@
+<% for page in @pages %>
+	<div class="page <%= page.status_in_words %>">
+		<%= link_to page.formatted_url, page.url, :target => "_blank", :class => "url" %>
+		<%= link_to "", page_path( page ), :method => :delete, :class => "remove", :title => "Delete", :confirm => "Delete URL?" %>
+		<% if page.status == 0 %>
+			<%= link_to "", finish_page_path( page ), :class => "status unlocked", :title => "Lock It!" %>
+		<% else %>
+			<%= link_to "", again_page_path( page ), :class => "status locked", :title => "Unlock It!" %>
+		<% end %>
+		<div class="date" title="Created on <%= page.created_at.strftime('%m/%d/%Y') %>"></div>
+		<!-- <%= link_to "t", tweet_page_path( page ), :class => "tweet", :title => "Tweet It!" %> -->
+	</div>
+<% end %>
+<div id="placeholder">
+	<% if no_pages %>
+		<div class="message">No Links Yet. <span>Add a link</span></div>
+	<% end %>
+</div>

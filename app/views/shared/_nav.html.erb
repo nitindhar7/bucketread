@@ -5,7 +5,7 @@
 			<div id="welcome">Welcome, <%= current_user.full_name %></div>
 			<%= link_to "Logout", logout_user_path( session[:user_id] ), :class => "tab" %>
 			<%= link_to "FAQs", faqs_path, :class => "tab" %>
-			<div class="tab" id="account_tab">Settings</div>	
+			<%= link_to "Account", account_path, :class => "tab" %>
 			<%= link_to "My Bucket", dashboard_path, :class => "tab" %>
 			<!-- <%= link_to "API", api_path, :class => "tab" %> -->
 		</div>

@@ -29,6 +29,28 @@ $( document ).ready(function() {
 		else
 			$account.show();
 	});
+	
+	$( "#top_control_filter_locked_links" ).live("click", function() {
+		$.ajax({
+			url: "/dashboard/pages",
+			dataType: "script",
+			data: "status=0",
+			success: function( data ){
+				$( "#window" ).html( data );
+			}
+		});
+	});
+	
+	$( "#top_control_filter_unlocked_links" ).live("click", function() {
+		$.ajax({
+			url: "/dashboard/pages",
+			dataType: "script",
+			data: "status=1",
+			success: function( data ){
+				$( "#window" ).html( data );
+			}
+		});
+	});
 });
 
 function displayAddPageForm()

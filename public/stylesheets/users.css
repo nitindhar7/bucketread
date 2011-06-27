@@ -17,7 +17,8 @@
 }
 
 #new_user,
-#login_form {
+#login_form,
+#account {
 	width: 598px;
 	background: #F0F0FF;
 	border: 1px solid #FFF;
@@ -28,7 +29,8 @@
 }
 
 #new_user .title,
-#login_form .title {
+#login_form .title,
+#account .title {
 	padding: 10px;
 	width: 578px;
 	height: 49px;
@@ -41,14 +43,16 @@
 }
 
 #new_user .content,
-#login_form .content {
+#login_form .content,
+#account .content {
 	padding: 20px;
 	width: 558px;
 	border-top: 1px solid #CCC;
 }
 
 #new_user .content label,
-#login_form .content label {
+#login_form .content label,
+#account .content label {
 	width: 558px;
 	height: 30px;
 	line-height: 30px;
@@ -58,7 +62,8 @@
 }
 
 #new_user .content .field,
-#login_form .content .field {
+#login_form .content .field,
+#account .content .field {
 	margin-bottom: 10px;
 	padding: 6px 5px;
 	width: 548px;
@@ -70,7 +75,8 @@
 }
 
 #new_user .content .button,
-#login_form .content .button {
+#login_form .content .button,
+#account .content .button {
 	width: 70px;
 	height: 30px;
 	font-size: 14px;

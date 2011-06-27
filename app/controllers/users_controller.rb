@@ -17,6 +17,18 @@ class UsersController < ApplicationController
     end
   end
   
+  def edit
+  end
+  
+  def update
+    @user = User.find( params[:id] )
+    if @user.update_attributes( params[:user] )
+      redirect_to dashboard_path, :notice => "Account Updated!"
+    else
+      redirect_to dashboard_path, :notice => "Account was not updated!"
+    end
+  end
+  
   def login
     @user = User.new
   end
@@ -47,15 +59,6 @@ class UsersController < ApplicationController
     session[:auth] = nil
     session[:twitter_client] = nil
     redirect_to login_path, :notice => "Logged Out!"
-  end
-  
-  def update
-    @user = User.find( params[:id] )
-    if @user.update_attributes( params[:user] )
-      redirect_to dashboard_path, :notice => "Account Updated!"
-    else
-      redirect_to dashboard_path, :notice => "Account was not updated!"
-    end
   end
   
   def login_with_twitter

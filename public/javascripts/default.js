@@ -6,6 +6,7 @@ $( document ).ready(function() {
 function messagesSetup()
 {
 	hideMessage();
+	clickHideMessage();
 }
 
 function hideMessage() {
@@ -14,8 +15,13 @@ function hideMessage() {
 	}, 3500);
 }
 
+function clickHideMessage()
+{
+	$( "#messages" ).live( 'click', function() { $( this ).fadeOut( 'slow' ); } )
+}
+
 function navSetup()
 {
-	$( ".tab:first" ).addClass( "first_tab" );
-	$( ".tab:last" ).addClass( "last_tab" );
+	$( "#nav .tab:first" ).addClass( "first_tab" );
+	$( "#nav .tab:last" ).addClass( "last_tab" );
 }

@@ -19,7 +19,6 @@ title {
 	text-decoration: none;
 	text-align: center;
 	float: left;
-	
 }
 
 .tab:hover {
@@ -30,4 +29,33 @@ title {
 }
 
 .last_tab {
+}
+
+.button {
+	position: relative;
+	color: #900;
+	background: #EEE;
+	background: -moz-linear-gradient(top, #EEE, #CCC);
+	background: -webkit-gradient(linear, left top, left bottom, from(#EEE), to(#CCC));
+	border: 1px solid #600;
+	float: left;
+	font-weight: bold;
+	text-align: center;
+	text-shadow: #FFF 1px 1px 0px;
+	text-decoration: none;
+	cursor: pointer;
+	-moz-box-shadow: 0 0 1px #000;
+	-webkit-box-shadow: 0 0 1px #000;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+
+.button:hover {
+	color: #333;
+}
+
+.first_button {	
+}
+
+.last_button {	
 }

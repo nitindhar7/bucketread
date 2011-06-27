@@ -15,3 +15,7 @@
 	-webkit-border-bottom-left-radius: 5px;
 	-webkit-border-bottom-right-radius: 5px;
 }
+
+#messages:hover {
+	opacity: .9;
+}

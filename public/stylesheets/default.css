@@ -11,3 +11,23 @@ script,
 title {
 	display: none;
 }
+
+.tab {
+	position: relative;
+	color: #900;
+	text-shadow: #FFF 1px 1px 0px;
+	text-decoration: none;
+	text-align: center;
+	float: left;
+	
+}
+
+.tab:hover {
+	color: #333;
+}
+
+.first_tab {
+}
+
+.last_tab {
+}

@@ -1,22 +1,20 @@
 <div id="nav">
-	<% if current_user %>
-		<%= link_to "", root_path, :id => "nav_logo" %>
-		<div id="tabs">
-			<div id="welcome">Welcome, <%= current_user.full_name %></div>
-			<%= link_to "Logout", logout_user_path( session[:user_id] ), :class => "tab" %>
-			<%= link_to "FAQs", faqs_path, :class => "tab" %>
-			<%= link_to "Account", account_path, :class => "tab" %>
+	<%= link_to "", root_path, :id => "nav_logo" %>
+	<div id="tabs">
+		<% if current_user %>
+			<div class="tab" id="nav_tab_full_name"><%= current_user.full_name %></div>
 			<%= link_to "My Bucket", dashboard_path, :class => "tab" %>
-			<!-- <%= link_to "API", api_path, :class => "tab" %> -->
-		</div>
-	<% else %>
-		<div id="tabs">
-			<%= link_to "Sign Up", signup_path, :class => "tab", :id => "nav_signup_tab" %>
-			<%= link_to "Login", login_path, :class => "tab" %>
+			<%= link_to "Account", account_path, :class => "tab" %>
 			<%= link_to "FAQs", faqs_path, :class => "tab" %>
-			<%= link_to "Home", root_path, :class => "tab" %>
+			<%= link_to "Logout", logout_user_path( session[:user_id] ), :class => "tab" %>
+			<!-- <%= link_to "API", api_path, :class => "tab" %> -->
+		<% else %>
+			<%= link_to "Features", root_path, :class => "tab" %>
+			<%= link_to "FAQs", faqs_path, :class => "tab" %>
+			<%= link_to "Sign Up", signup_path, :class => "tab" %>
+			<%= link_to "Login", login_path, :class => "tab" %>
 			<!-- <%= link_to "API", api_path, :class => "tab" %> -->
 			<!-- <%= link_to "", "/auth/twitter", :id => "login_with_twitter", :class => "tab" %> -->
-		</div>
-	<% end %>
+		<% end %>
+	</div>
 </div>

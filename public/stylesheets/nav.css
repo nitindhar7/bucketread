@@ -7,37 +7,34 @@
 
 #tabs {
 	position: relative;
-	width: 500px;
-	height: 75px;
+	margin-top: 20px;
+	height: 33px;
+	background: #E8E8E8;
+	background: -moz-linear-gradient(top, #FCFCFC, #E8E8E8);
+	background: -webkit-gradient(linear, left top, left bottom, from(#FCFCFC), to(#E8E8E8));
 	float: right;
-}
-
-#welcome {
-	position: relative;
-	width: 500px;
-	height: 35px;
-	line-height: 35px;
-	font-size: 12px;
-	float: right;
-	text-align: right;
-	color: #999;
+	border: 1px solid #FFF;
+	-moz-box-shadow: 0 0 1px #000;
+	-webkit-box-shadow: 0 0 1px #000;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
 }
 
 #nav .tab {
-	position: relative;
-	margin-left: 30px;
-	min-width: 10px;
-	height: 40px;
-	line-height: 40px;
-	font-size: 14px;
-	float: right;
-	color: #999;
-	text-decoration: none;
+	margin-top: 10px;
+	padding: 0 15px;
+	height: 13px;
+	line-height: 13px;
+	border-left: 1px solid #CCC;
+	border-right: 1px solid #FFF;
 }
 
-#nav .tab:hover {
-	color: #333;
-	cursor: pointer;
+#nav .first_tab {
+	border-left: 0;
+}
+
+#nav .last_tab {
+	border-right: 0;
 }
 
 #login_with_twitter {
@@ -62,22 +59,6 @@
 	float: left;
 }
 
-#nav_signup_tab {
-	margin-top: 5px;
-	height: 28px !important;
-	line-height: 28px !important;
-	padding: 0 30px;
-	background: #FC0;
-	background: -moz-linear-gradient(top, #FFE270, #FC0);
-	background: -webkit-gradient(linear, left top, left bottom, from(#FFE270), to(#FC0));
-	color: #665200 !important;
+#nav_tab_full_name {
 	font-weight: bold;
-	text-shadow: #FFF 1px 1px 2px;
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
-	border: 1px solid #FC0;
-}
-
-#nav_signup_tab:hover {
-	background: #FC0;
 }

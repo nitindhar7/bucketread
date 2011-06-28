@@ -18,7 +18,7 @@ class DashboardController < ApplicationController
   end
   
   def features
-    redirect_to root_path, :notice => "List of features coming soon!"
+    redirect_to :back, :notice => "List of features coming soon!"
   end
   
 end

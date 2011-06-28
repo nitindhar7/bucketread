@@ -5,12 +5,12 @@
 			<div class="tab" id="nav_tab_full_name"><%= current_user.full_name %></div>
 			<%= link_to "My Bucket", dashboard_path, :class => "tab" %>
 			<%= link_to "Account", account_path, :class => "tab" %>
-			<%= link_to "Features", root_path, :class => "tab" %>
+			<%= link_to "Features", features_path, :class => "tab" %>
 			<%= link_to "FAQs", faqs_path, :class => "tab" %>
 			<%= link_to "Logout", logout_user_path( session[:user_id] ), :class => "tab" %>
 			<!-- <%= link_to "API", api_path, :class => "tab" %> -->
 		<% else %>
-			<%= link_to "Features", root_path, :class => "tab" %>
+			<%= link_to "Features", features_path, :class => "tab" %>
 			<%= link_to "FAQs", faqs_path, :class => "tab" %>
 			<%= link_to "Sign Up", signup_path, :class => "tab" %>
 			<%= link_to "Login", login_path, :class => "tab" %>

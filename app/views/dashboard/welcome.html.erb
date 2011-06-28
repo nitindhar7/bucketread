@@ -3,8 +3,8 @@
 		<div id="banner_slogan">Simply Bookmark & Get Organized</div>
 		<div id="banner_summary">Manage those precious links that you've been waiting to read, all in one safe place!</div>
 		<div id="banner_nav">
-			<div class="button">TAKE A TOUR</div>
-			<div class="button">CREATE AN ACCOUNT</div>
+			<%= link_to "TAKE A TOUR", features_path, :class => "button" %>
+			<%= link_to "CREATE AN ACCOUNT", signup_path, :class => "button" %>
 		</div>
 	</div>
 	<div id="banner_visual">
@@ -66,7 +66,5 @@
 			</div>
 		</div>
 	</div>
-	<div id="twitter_roll">
-		
-	</div>
+	<div id="twitter_roll"></div>
 </div>

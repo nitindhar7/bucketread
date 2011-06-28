@@ -11,6 +11,7 @@ ActionController::Routing::Routes.draw do |map|
   map.api_authorize "authorize.:format", :controller => :users, :action => :authorize, :format => :format
   map.account "account", :controller => :users, :action => :edit
   map.dashboard "dashboard", :controller => :dashboard
+  map.features "features", :controller => :dashboard, :action => :features
   map.faqs "faqs", :controller => :dashboard, :action => :faqs
   map.api "api", :controller => :dashboard, :action => :api
 

@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
   end
   
   def auth_login
-    reset_session if session[:last_seen] < 1.days.ago
+    reset_session #if session[:last_seen] < 1.day.ago
     
     unless current_user
       redirect_to login_path, :notice => "Please Login or Signup"

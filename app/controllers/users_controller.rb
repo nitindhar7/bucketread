@@ -56,9 +56,7 @@ class UsersController < ApplicationController
   end
   
   def logout
-    session[:user_id] = nil
-    session[:auth] = nil
-    session[:twitter_client] = nil
+    reset_session
     redirect_to login_path, :notice => "Logged Out!"
   end
   

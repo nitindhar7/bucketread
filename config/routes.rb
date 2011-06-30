@@ -16,7 +16,7 @@ ActionController::Routing::Routes.draw do |map|
   map.api "api", :controller => :dashboard, :action => :api
 
   map.connect "/auth/failure", :controller => :users, :action => :failure
-  #map.connect "/auth/:provider", :controller => :users, :action => :blank
+  map.connect "/auth/:provider", :controller => :users, :action => :blank
   map.connect "/auth/:provider/callback", :controller => :users, :action => :login_with_twitter
   map.connect "dashboard/pages", :controller => :dashboard, :action => :pages
   

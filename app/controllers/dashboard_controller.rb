@@ -10,7 +10,11 @@ class DashboardController < ApplicationController
   end
 
   def pages
-    @pages = Page.find( :all, :order => "updated_at", :conditions => { :user_id => current_user.id, :status => params[:status] } )
+    if params[:status] == '2'
+      @pages = Page.find( :all, :order => "updated_at", :conditions => { :user_id => current_user.id } )
+    else
+      @pages = Page.find( :all, :order => "updated_at", :conditions => { :user_id => current_user.id, :status => params[:status] } )
+    end
     
     respond_to do |format|
       format.js { render :partial => "pages" }

@@ -8,29 +8,7 @@ $( document ).ready(function() {
 		displayAddPageForm();
 	});
 	
-	$( "#nav .main_actions" ).live("click", function() {
-		var $main_actions = $( "#main_actions" );
-		var display = $main_actions.css( 'display' );
-		
-		if (display == 'block') 
-			$main_actions.hide();
-		else {
-			$main_actions.show();
-			$("#login_form .field:first").focus();
-		}
-	});
-	
-	$( "#account_tab" ).live("click", function() {
-		var $account = $( "#account" );
-		var display = $account.css( 'display' );
-		
-		if( display == 'block' )
-			$account.hide();
-		else
-			$account.show();
-	});
-	
-	$( "#top_control_filter_locked_links" ).live("click", function() {
+	$( "#top_control_filter_read_links" ).live("click", function() {
 		$.ajax({
 			url: "/dashboard/pages",
 			dataType: "script",
@@ -41,11 +19,24 @@ $( document ).ready(function() {
 		});
 	});
 	
-	$( "#top_control_filter_unlocked_links" ).live("click", function() {
+	$( "#top_control_filter_unread_links" ).live("click", function() {
 		$.ajax({
 			url: "/dashboard/pages",
 			dataType: "script",
 			data: "status=0",
+			success: function( data ){
+				$( "#window" ).html( data );
+			}
+		});
+	});
+	
+	$( "#top_control_filter" ).live("change", function() {
+		var status_val = $( "#top_control_filter option:selected" ).val();
+		
+		$.ajax({
+			url: "/dashboard/pages",
+			dataType: "script",
+			data: "status=" + status_val,
 			success: function( data ){
 				$( "#window" ).html( data );
 			}

@@ -59,3 +59,16 @@ title {
 
 .last_button {	
 }
+
+select {
+	background: #FFF;
+	border: 1px solid #CCC;
+}
+
+select:hover {
+	background: #EEE;
+}
+
+option {
+	background: #EEE;
+}

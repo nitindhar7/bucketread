@@ -3,9 +3,9 @@
 		<%= link_to page.formatted_url, page.standardized_url, :target => "_blank", :class => "url" %>
 		<%= link_to "", page_path( page ), :method => :delete, :class => "remove", :title => "Delete", :confirm => "Delete URL?" %>
 		<% if page.status == 0 %>
-			<%= link_to "", finish_page_path( page ), :class => "status unlocked", :title => "Lock It!" %>
+			<%= link_to "", read_page_path( page ), :class => "status unread", :title => "Mark as read!" %>
 		<% else %>
-			<%= link_to "", again_page_path( page ), :class => "status locked", :title => "Unlock It!" %>
+			<%= link_to "", unread_page_path( page ), :class => "status read", :title => "Mark as unread!" %>
 		<% end %>
 		<div class="date" title="Created on <%= page.created_at.strftime('%m/%d/%Y') %>"></div>
 		<!-- <%= link_to "t", tweet_page_path( page ), :class => "tweet", :title => "Tweet It!" %> -->

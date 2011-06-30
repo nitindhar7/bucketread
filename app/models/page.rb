@@ -18,9 +18,9 @@ class Page < ActiveRecord::Base
   
   def status_in_words
     if status == 0
-      'unfinished'
+      'unread'
     else
-      'finished'
+      'read'
     end
   end
   

@@ -2,8 +2,11 @@
 	
 	<div id="top_controls">
 		<div id="top_control_add_page" class="top_control" title="Add a link"></div>
-		<div id="top_control_filter_locked_links" class="top_control" title="Show locked links"></div>
-		<div id="top_control_filter_unlocked_links" class="top_control" title="Show unlocked links"></div>
+		<select id="top_control_filter">
+			<option value="2">All</option>
+			<option value="1">Read</option>
+			<option value="0">Unread</option>
+		</select>
 	</div>
 	
 	<%= render :partial => "add_page" %>

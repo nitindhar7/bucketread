@@ -220,10 +220,11 @@
 
 #pages {
 	margin: auto;
+	margin-top: 10px;
 	width: 900px;
 	min-height: 600px;
 	background: #DDD;
-	border: 1px solid #999;
+	border: 1px solid #CCC;
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
 	-moz-box-shadow: 0 0 5px #CCC;
@@ -268,22 +269,17 @@
 	background-position: 0 -192px;
 }
 
-#top_controls #top_control_filter_locked_links {
-	background-position: -192px -96px;
+#top_controls select {
+	position: relative;
+	margin-top: 4px;
+	width: 68px;
+	height: 20px;
+	float: left;
 }
 
-#top_controls #top_control_filter_locked_links:hover {
-	background: url(/images/jqueryui-lightness-orange.png) no-repeat;
-	background-position: -192px -96px;
-}
-
-#top_controls #top_control_filter_unlocked_links {
-	background-position: -208px -96px;
-}
-
-#top_controls #top_control_filter_unlocked_links:hover {
-	background: url(/images/jqueryui-lightness-orange.png) no-repeat;
-	background-position: -208px -96px;
+#top_controls select option {
+	width: 68px;
+	height: 20px;
 }
 
 #add_page {
@@ -334,14 +330,14 @@
 	clear: both;
 }
 
-#window .finished {
+#window .read {
 	background: #DAEBCF;
 }
 
 #window .page .url,
 #window .page .status,
-#window .page .unlocked,
-#window .page .locked,
+#window .page .unread,
+#window .page .read,
 #window .page .remove,
 #window .page .date,
 #window .page .tweet {
@@ -375,12 +371,12 @@
 	opacity: 1;
 }
 
-#window .page .unlocked {
-	background-position: -208px -96px;
+#window .page .unread {
+	background-position: -192px -96px;
 }
 
-#window .page .locked {
-	background-position: -192px -96px;
+#window .page .read {
+	background-position: -208px -96px;
 }
 
 #window .page .remove {

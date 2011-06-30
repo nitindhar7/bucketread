@@ -22,25 +22,25 @@ class PagesController < ApplicationController
     end
   end
   
-  def finish
+  def read
     @page = Page.find( params[:id] )
     @page.status = 1
     
     if @page.save
-      redirect_to dashboard_path, :notice => "Finished Page!"
+      redirect_to dashboard_path, :notice => "Page marked as read!"
     else
-      redirect_to dashboard_path, :notice => "Could Not Finish Page!"
+      redirect_to dashboard_path, :notice => "Could not mark page as read!"
     end
   end
   
-  def again
+  def unread
     @page = Page.find( params[:id] )
     @page.status = 0
     
     if @page.save
-      redirect_to dashboard_path, :notice => "Unlocked Page!"
+      redirect_to dashboard_path, :notice => "Page marked as unread!"
     else
-      redirect_to dashboard_path, :notice => "Could Not Unlock Page!"
+      redirect_to dashboard_path, :notice => "Could not mark page as unread!"
     end
   end
   

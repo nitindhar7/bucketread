@@ -23,7 +23,7 @@
 #login_form .title,
 #account .title {
 	padding: 10px;
-	width: 578px;
+	width: 878px;
 	height: 49px;
 	line-height: 49px;
 	color: #900;
@@ -37,14 +37,14 @@
 #login_form .content,
 #account .content {
 	padding: 20px;
-	width: 558px;
+	width: 858px;
 	border-top: 1px solid #CCC;
 }
 
 #new_user .content label,
 #login_form .content label,
 #account .content label {
-	width: 558px;
+	width: 858px;
 	height: 30px;
 	line-height: 30px;
 	font-size: 16px;

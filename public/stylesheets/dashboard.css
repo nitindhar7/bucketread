@@ -453,12 +453,15 @@
  */
 #faqs {
 	margin: auto;
+	margin-top: 10px;
 	padding: 20px;
 	width: 860px;
-	border: 1px solid #DDD;
-	background: #EEE;
+	background: #F0F0FF;
+	border: 1px solid #FFF;
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
+	-moz-box-shadow: 0 0 1px #333;
+	-webkit-box-shadow: 0 0 1px #333;
 }
 
 #faqs .title {

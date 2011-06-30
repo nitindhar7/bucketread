@@ -1,31 +1,9 @@
 <div id="faqs">
 	<div class="title">FREQUENTLY ASKED QUESTIONS</div>
-	<div class="faq">
-		<div class="question">How would you describe BucketRead in less than 10 words?</div>
-		<div class="answer">A simple bookmarking service that helps you get organized.</div>
-	</div>
-	<div class="faq">
-		<div class="question">What do I need to get started?</div>
-		<div class="answer">All you need is a valid email address.</div>
-	</div>
-	<div class="faq">
-		<div class="question">What's this business of 'locking' and 'unlocking' a link?</div>
-		<div class="answer">The purpose of BucketRead is to allow you to organize links. After you read an article on a link you can 'lock' is so that it becomes archived. Links that are unlocked are the ones you want to read.</div>
-	</div>
-	<div class="faq">
-		<div class="question">Can 'locked' links be 'unlocked'?</div>
-		<div class="answer">Yes, the purpose of locking a link is to mark it off as read. 'locked' links can be revisited by unlocking them.</div>
-	</div>
-	<div class="faq">
-		<div class="question">Can I 'drag and drop' a site to read later to save it?</div>
-		<div class="answer">At the moment, URLs have to be copy/pasted. The BucketRead chrome extension will allow a 1-click solution to this.</div>
-	</div>
-	<div class="faq">
-		<div class="question">I am a developer, can I integrate BucketRead into my app?</div>
-		<div class="answer">Yes. Check the BucketRead API documentation for information on how to authorize and link your app.</div>
-	</div>
-	<div class="faq">
-		<div class="question">My question was not answered here!</div>
-		<div class="answer">Apologies. Please get in touch by sending us your question on bucketread AT basedataapp.com</div>
-	</div>
+	<% for faq in @faqs %>
+		<div class="faq">
+			<div class="question"><%= faq.question %></div>
+			<div class="answer"><%= faq.answer %></div>
+		</div>
+	<% end %>
 </div>

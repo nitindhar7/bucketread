@@ -9,7 +9,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110607144658) do
+ActiveRecord::Schema.define(:version => 20110630090617) do
+
+  create_table "faqs", :force => true do |t|
+    t.string   "question",   :null => false
+    t.string   "answer",     :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "pages", :force => true do |t|
     t.string   "url",        :limit => 200,                :null => false

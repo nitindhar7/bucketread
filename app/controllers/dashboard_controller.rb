@@ -21,4 +21,8 @@ class DashboardController < ApplicationController
     redirect_to :back, :notice => "List of features coming soon!"
   end
   
+  def faqs
+    @faqs = Faq.find( :all )
+  end
+  
 end

@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
   end
   
   def auth_login
-    reset_session #if session[:last_seen] < 1.day.ago
+    reset_session if !session[:last_seen].blank? && session[:last_seen] < 1.day.ago
     
     unless current_user
       redirect_to login_path, :notice => "Please Login or Signup"
@@ -22,6 +22,7 @@ class ApplicationController < ActionController::Base
     session[:user_id] = nil
     session[:auth] = nil
     session[:twitter_client] = nil
+    session[:last_seen] = nil
   end
   
 end

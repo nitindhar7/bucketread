@@ -330,8 +330,12 @@
 	clear: both;
 }
 
-#window .read {
-	background: #DAEBCF;
+#window > .unread {
+	font-weight: bold;
+}
+
+#window > .read {
+	font-weight: normal;
 }
 
 #window .page .url,

@@ -7,6 +7,7 @@ function messagesSetup()
 {
 	hideMessage();
 	clickHideMessage();
+	hoverHideMessage();
 }
 
 function hideMessage() {
@@ -18,6 +19,11 @@ function hideMessage() {
 function clickHideMessage()
 {
 	$( "#messages" ).live( 'click', function() { $( this ).fadeOut( 'slow' ); } )
+}
+
+function hoverHideMessage()
+{
+	$( "#messages" ).live( 'mouseover', function() { $( this ).fadeOut( 'slow' ); } )
 }
 
 function navSetup()

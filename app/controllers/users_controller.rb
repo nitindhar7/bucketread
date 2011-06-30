@@ -13,7 +13,7 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect_to dashboard_path, :notice => "Signed Up!"
     else
-      redirect_to root_path, :notice => "Sign Up Failed!"
+      redirect_to signup_path, :notice => "Sign Up Failed!"
     end
   end
   
@@ -39,6 +39,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user
         session[:user_id] = @user.id
+        session[:last_seen] = Time.now
         flash[:notice] = "Logged In!"
         format.html { redirect_to dashboard_path }
         format.xml { render :text => @user.to_xml( :skip_types => true, :dasherize => false, :except => [:password_hash, :password_salt] ) }
@@ -48,7 +49,7 @@ class UsersController < ApplicationController
         end
       else
         flash[:notice] = "Invalid Email or Password"
-        format.html { redirect_to root_path }
+        format.html { redirect_to login_path }
         format.json { render :json => nil }
       end
     end

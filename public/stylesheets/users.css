@@ -10,7 +10,7 @@
 #new_user,
 #login_form,
 #account {
-	width: 598px;
+	width: 898px;
 	background: #F0F0FF;
 	border: 1px solid #FFF;
 	-moz-border-radius: 5px;
@@ -30,7 +30,7 @@
 	text-shadow: #FFF 1px 1px 2px;
 	font-size: 26px;
 	font-weight: bold;
-	border-bottom: 1px solid #FFF; 
+	border-bottom: 1px solid #FFF;
 }
 
 #new_user .content,

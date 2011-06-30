@@ -1,15 +1,6 @@
 /*
  * LOGIN
  */
-#main_content_wrapper {
-	width: 100%;
-	background: #F5F5F5;
-	background: -moz-linear-gradient(top, #F5F5F5, #EEE);
-	background: -webkit-gradient(linear, left top, left bottom, from(#F5F5F5), to(#EEE));
-	border-top: 1px solid #CCC;
-	border-bottom: 1px solid #CCC;
-}
-
 #main_content {
 	margin: auto;
 	padding: 10px 0;

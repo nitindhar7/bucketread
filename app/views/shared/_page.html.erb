@@ -1,0 +1,12 @@
+<div id="page_<%= page.id %>" class="page <%= page.status_in_words %>">
+	<input type="checkbox" class="filter" value="<%= page.id %>" />
+	<%= link_to page.formatted_url, page.standardized_url, :target => "_blank", :class => "url" %>
+	<%= link_to "", page_path( page ), :method => :delete, :class => "remove", :title => "Delete", :confirm => "Delete URL?" %>
+	<% if page.status == 0 %>
+		<div class="status unread" title="Mark as read!"></div>
+	<% else %>
+		<%= link_to "", unread_page_path( page ), :class => "status read", :title => "Mark as unread!" %>
+	<% end %>
+	<div class="date" title="Created on <%= page.created_at.strftime('%m/%d/%Y') %>"></div>
+	<!-- <%= link_to "t", tweet_page_path( page ), :class => "tweet", :title => "Tweet It!" %> -->
+</div>

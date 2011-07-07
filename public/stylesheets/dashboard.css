@@ -269,12 +269,38 @@
 	background-position: 0 -192px;
 }
 
+#top_controls #top_control_mark_read {
+	background-position: -192px -96px;
+}
+
+#top_controls #top_control_mark_read:hover {
+	background: url(/images/jqueryui-lightness-orange.png) no-repeat;
+	background-position: -192px -96px;
+}
+
+#top_controls #top_control_mark_unread {
+	background-position: -208px -96px;
+}
+
+#top_controls #top_control_mark_unread:hover {
+	background: url(/images/jqueryui-lightness-orange.png) no-repeat;
+	background-position: -208px -96px;
+}
+
+
+
 #top_controls select {
 	position: relative;
 	margin-top: 4px;
+	margin-right: 10px;
 	width: 68px;
 	height: 20px;
 	float: left;
+}
+
+#top_controls #top_control_actions,
+#top_controls #top_control_actions option {
+	width: 118px;
 }
 
 #top_controls select option {
@@ -351,6 +377,14 @@
 	line-height: 18px;
 	color: #555;
 	float: right;
+	cursor: pointer;
+}
+
+#window .page .filter {
+	position: relative;
+	margin-right: 10px;
+	padding: 0 5px;
+	float: left;
 }
 
 #window .page .url {

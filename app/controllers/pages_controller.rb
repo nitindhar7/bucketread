@@ -25,23 +25,13 @@ class PagesController < ApplicationController
   def read
     @page = Page.find( params[:id] )
     @page.status = 1
-    
-    if @page.save
-      redirect_to dashboard_path, :notice => "Page marked as read!"
-    else
-      redirect_to dashboard_path, :notice => "Could not mark page as read!"
-    end
+    mark( @page )
   end
   
   def unread
     @page = Page.find( params[:id] )
     @page.status = 0
-    
-    if @page.save
-      redirect_to dashboard_path, :notice => "Page marked as unread!"
-    else
-      redirect_to dashboard_path, :notice => "Could not mark page as unread!"
-    end
+    mark( @page )
   end
   
   def destroy
@@ -56,6 +46,20 @@ class PagesController < ApplicationController
     @page = Page.find( params[:id] )
     session[:twitter_client].update( "I found this interesting: #{@page.url} @BucketRead" )
     redirect_to dashboard_path, :notice => "Tweeted Link!"
+  end
+  
+  private
+  
+  def mark(page)
+    respond_to do |format|
+      if page.save
+        flash[:notice] = "Page marked as Read!"
+        format.html { redirect_to dashboard_path }
+        format.js { render :partial => "shared/page", :object => page }
+      else
+        format.html { redirect_to dashboard_path, :notice => "Could not mark page as read!" }
+      end
+    end
   end
   
 end

@@ -2,11 +2,9 @@
 	
 	<div id="top_controls">
 		<div id="top_control_add_page" class="top_control" title="Add a link"></div>
-		<select id="top_control_filter">
-			<option value="2">All</option>
-			<option value="1">Read</option>
-			<option value="0">Unread</option>
-		</select>
+		<div id="top_control_mark_read" class="top_control" title="Mark selected as Read!"></div>
+		<div id="top_control_mark_unread" class="top_control" title="Mark selected as Unread!"></div>
+		<%= select_tag( :filter, options_for_select( @filter_options, :disabled => @disabled_filter_options ), :id => "top_control_filter" ) %>
 	</div>
 	
 	<%= render :partial => "add_page" %>

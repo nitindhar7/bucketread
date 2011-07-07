@@ -9,11 +9,7 @@ class Page < ActiveRecord::Base
   
   # METHODS  
   def formatted_url
-    if url.length > 100
-      "#{self.url[0..100]}..."
-    else
-      self.url
-    end
+    url[0..90]
   end
   
   def status_in_words
@@ -25,7 +21,7 @@ class Page < ActiveRecord::Base
   end
   
   def standardized_url
-    'http://' + url unless url.match(/^[h][t][t][p][:][\/][\/]/)
+    url.match(/^[h][t][t][p][:][\/][\/]/) ? url : "http://#{url}"
   end
   
 end

@@ -4,6 +4,10 @@ class DashboardController < ApplicationController
   
   def index
     @pages = Page.find( :all, :order => "updated_at", :conditions => { :user_id => current_user.id } )
+    @filter_options = [['Filter'], ['All', 2], ['Read', 1], ['Unread', 0]]
+    @action_options = [['Actions'], ['Mark as Read', 1], ['Mark as Unread', 0]]
+    @disabled_filter_options = "Filter"
+    @disabled_action_options = "Actions"
   end
 
   def welcome

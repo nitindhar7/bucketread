@@ -8,6 +8,7 @@ class UsersController < ApplicationController
   
   def create
     @user = User.new( params[:user] )
+    logger.info(params.inspect)
     
     if @user.save
       session[:user_id] = @user.id
@@ -22,6 +23,11 @@ class UsersController < ApplicationController
   
   def update
     @user = User.find( params[:id] )
+    
+    photo_data = params[:user][:user_photo]
+    
+    @user.add_photo( photo_data ) unless photo_data.blank?
+    
     if @user.update_attributes( params[:user] )
       redirect_to dashboard_path, :notice => "Account Updated!"
     else
@@ -97,6 +103,17 @@ class UsersController < ApplicationController
   
   def failure
     redirect_to dashboard_path, :notice => "Login with Twitter failed!"
+  end
+  
+  def destroy
+    @user = User.find( params[:id] )
+    @user.pages.each{ |page| page.delete }
+    @user.providers.each{ |provider| provider.delete }
+    @user.photo.delete
+    @user.delete
+    
+    reset_session
+    redirect_to root_path, :notice => "Your account has been deactivated. Thank you for using BucketRead!"
   end
   
   private

@@ -1,6 +1,3 @@
-/*
- * LOGIN
- */
 #main_content {
 	margin: auto;
 	padding: 10px 0;
@@ -31,6 +28,14 @@
 	font-size: 26px;
 	font-weight: bold;
 	border-bottom: 1px solid #FFF;
+}
+
+#account .title .button {
+	margin-top: 10px;
+	padding: 0 10px;
+	height: 29px;
+	line-height: 29px;
+	float: right;
 }
 
 #new_user .content,
@@ -70,6 +75,15 @@
 #account .content .button {
 	width: 70px;
 	height: 30px;
+	font-size: 14px;
+	float: none;
+}
+
+#account #user_photo_upload {
+	margin-bottom: 10px;
+	width: 550px;
+	height: 40px;
+	line-height: 40px;
 	font-size: 14px;
 	float: none;
 }

@@ -4,6 +4,7 @@ ActionController::Routing::Routes.draw do |map|
   
   map.resources :users, :member => { :logout => :get }
   map.resources :pages, :member => { :read => :get, :unread => :get, :tweet => :get }
+  map.resources :photos, :member => { :nav_thumbnail => :get }
 
   map.login "login", :controller => :users, :action => :login
   map.signup "signup", :controller => :users, :action => :new
@@ -19,7 +20,7 @@ ActionController::Routing::Routes.draw do |map|
   map.connect "/auth/:provider", :controller => :users, :action => :blank
   map.connect "/auth/:provider/callback", :controller => :users, :action => :login_with_twitter
   map.connect "dashboard/pages", :controller => :dashboard, :action => :pages
-  
+
   map.connect ':controller/:action/:id'
   map.connect ':controller/:action/:id.:format'
 end

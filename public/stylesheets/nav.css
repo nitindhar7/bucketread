@@ -62,3 +62,19 @@
 #nav_tab_full_name {
 	font-weight: bold;
 }
+
+#nav_tab_full_name:hover {
+	color: #900;
+}
+
+#nav_thumbnail {
+	position: relative;
+	margin-top: 5px;
+	margin-left: 15px;
+	width: 21px;
+	height: 21px;
+	float: left;
+	border: 1px solid #FFF;
+	-moz-box-shadow: 0 0 1px #000;
+	-webkit-box-shadow: 0 0 1px #000;
+}

@@ -1,6 +1,6 @@
 <div id="main_content_wrapper">
 	<div id="main_content">
-		<% form_for(@user) do |f| %>
+		<% form_for( @user, :html => { :multipart => true } ) do |f| %>
 			<div class="title">Sign Up & Organize Your Links</div>
 			<div class="content">
 				<%= f.error_messages %>
@@ -11,6 +11,8 @@
 				<%= f.text_field :last_name, :class => "field" %>
 				<%= f.label :email %>
 				<%= f.text_field :email, :class => "field" %>
+				<%= f.label :user_photo %>
+				<%= f.file_field :user_photo %>
 				<%= f.label :password %>
 				<%= f.password_field :password, :class => "field" %>
 				<%= f.label :password_confirmation %>

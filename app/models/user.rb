@@ -1,8 +1,9 @@
 class User < ActiveRecord::Base
   
   # ASSOCIATIONS
-  has_many :pages
-  has_many :providers
+  has_many :pages, :dependent => :delete_all
+  has_many :providers, :dependent => :delete_all
+  has_one :photo, :dependent => :delete
   
   # FILTERS
   before_save :encrypt_password
@@ -10,6 +11,7 @@ class User < ActiveRecord::Base
   # ACCESS MODIFIERS
   attr_readonly :password_salt, :password_hash
   attr_accessor :password
+  attr_accessor :user_photo
   
   # VALIDATIONS
   validates_confirmation_of :password
@@ -39,6 +41,13 @@ class User < ActiveRecord::Base
   
   def full_name
     "#{first_name} #{last_name}"
+  end
+  
+  def add_photo(input_data)
+    @photo = Photo.new
+    @photo.user_photo = input_data
+    @photo.user_id = self.id
+    @photo.save!
   end
   
   def self.hashify_password(password, password_salt)

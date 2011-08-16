@@ -10,4 +10,16 @@ class Photo < ActiveRecord::Base
     self.binary_data = input_data.read
   end
   
+  def self.default_thumbnail
+    "#{Rails.root}/public/images/blank.png"
+  end
+  
+  def self.default_thumbnail_filename
+    self.default_thumbnail.split( "/" ).last
+  end
+  
+  def self.default_content_type
+    "image/png"
+  end
+  
 end

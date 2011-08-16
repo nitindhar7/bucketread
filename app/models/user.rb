@@ -43,8 +43,15 @@ class User < ActiveRecord::Base
     "#{first_name} #{last_name}"
   end
   
-  def add_photo(input_data)
+  def add_photo(custom_photo)
     @photo = Photo.new
+    @photo.user_photo = custom_photo
+    @photo.user_id = self.id
+    @photo.save!
+  end
+  
+  def update_photo(input_data)
+    @photo = Photo.find( :first, :conditions => { :user_id => self.id } )
     @photo.user_photo = input_data
     @photo.user_id = self.id
     @photo.save!

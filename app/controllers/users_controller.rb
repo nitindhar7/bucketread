@@ -8,9 +8,13 @@ class UsersController < ApplicationController
   
   def create
     @user = User.new( params[:user] )
-    logger.info(params.inspect)
+
+    data = open( Photo.default_thumbnail, 'rb' ).read
     
+    @custom_photo = CustomPhoto.new( Photo.default_thumbnail_filename, Photo.default_content_type, data )
+
     if @user.save
+      @user.add_photo( @custom_photo )
       session[:user_id] = @user.id
       redirect_to dashboard_path, :notice => "Signed Up!"
     else
@@ -26,12 +30,12 @@ class UsersController < ApplicationController
     
     photo_data = params[:user][:user_photo]
     
-    @user.add_photo( photo_data ) unless photo_data.blank?
+    @user.update_photo( photo_data ) unless photo_data.blank?
     
     if @user.update_attributes( params[:user] )
       redirect_to dashboard_path, :notice => "Account Updated!"
     else
-      redirect_to dashboard_path, :notice => "Account was not updated!"
+      redirect_to account_path, :notice => "Account was not updated!"
     end
   end
   
